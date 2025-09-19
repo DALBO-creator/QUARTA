@@ -76,3 +76,8 @@ MODELLI DI SVILUPPO SOFTWARE:
 - IDEALE PER: Progetti complessi o dove i requisiti sono destinati a evolvere.
 - METRICA: Il software funzionante è più importante della documentazione formale.
 - COINVOLGIMENTO CLIENTE: Essenziale e continuo.
+
+CONCETTI CHIAVE:
+Sprint: Ciclo di sviluppo a durata fissa per completare una serie di funzionalità definite.
+Scrum: Uno dei framework più popolari che implementa i principi Agile.
+Prodotto Funzionante: La metrica principale del progresso non è la documentazione, ma il software che funziona.
