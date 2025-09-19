@@ -1,0 +1,43 @@
+CICLO DI SVILUPPO DEL PROGETTO INFORMATICO	
+
+l'ingegneria del software per mette di creare software con le seguenti caratteristiche:
+-affidabilità
+-efficienza
+-manutenibilità
+
+requisiti software e stakeholder 
+definizione dei requisiti: analisi completa dei bisogni dell'user per definire quello che il sistema deve fare.
+raccolta requisiti: operazione difficile, richiede + partecipanti (stakeholder)
+interviste: confronto con i clienti.
+
+analisi dei requisiti
+-requisiti funzionali: cosa deve fare il software.
+-requisiti non funzionali: caratteristiche di qualità del sistema.
+-requisiti di dominio: regole, normative o procedure che di pendono dal settore di applicazione.
+-requisiti di vincolo: condizioni a cui lo sviluppo deve attenersi. es: data di completamento progetto.
+-analisi fattibilità: valutare se il progetto possa essere realizzato in modo efficace e sostenibile.
+-analisi concorrenza: osservare e confrontare i prodotti simili già presenti nel settore di interesse.
+-User story: who? (l'utente a cui ci rivolgiamo), what? (il bisogno che vogliamo soddisfare), why? (il motivo per cui vogliamo soddisfarlo);
+
+ESERCIZIO: APP PER ORGANIZZARE VIAGGIO TRA AMICI
+
+-requisiti funzionali: creazione viaggio, invito amici, gestione partecipanti, profilo utente, condivisione spese, calendario per la prenotazione, calcolo del costo, proposta delle tappe, recensioni, possibilità di scelta della classe in cui viaggiare…
+-requisiti non funzionali: design intuitivo, prestazioni buone, AI chatbot per supporto alla prenotazione..
+-requisiti di dominio: supporto multi valuta per prenotazioni da regioni diverse e gestione fusi orari per regioni diverse, normative di privacy, accesso a delle mappe affidabili (Google Maps)..
+-requisiti di vincolo: budget massimo per sviluppo e lancio app: 50mila euro; termine massimo: marzo 2026; compatibilità su diversi OS (Android, Apple, MacOS, Windows)..
+
+
+TECNICHE DI RACCOLTA DEI REQUISITI
+interviste:
+-strutturate: check list (domande strutturate) a cui ricevere una sisposta, una specie di questionario creato prima di parlare con il cliente.
+-non strutturate: parlare liberamente con il cliente, consente di ottenere funzioni più dettagliate  eperosnalizzate.
+
+questionario:
+dati quantitativi: domande a risposta chiusa o scale di valutazione (quanto spesso utilizzeresti questa funzionalità?).
+dati qualitativi: domande aperte che lasciano libertà di espressione (quali sono le funzionalità più importanti che vorresti vedere nella tua app?).
+vantaggi: possono raggiungere un vasto pubblico, raccolgono dati standardizzati, anonimi.
+svantaggi: offrono meno profondità di analisi rispetto alle interviste.
+
+l'osservazione:
+vantaggi: consente di scoprire bisogni impliciti, fornisce dati concreti su come gli utenti lavorano realmente, mette in luce le insufficenze dell'app;
+svantaggi: può influenzare il comportamento degli utenti osservati, richiede tempo e pazienza, e l'interpretazione può essere soggettiva;
