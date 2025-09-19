@@ -90,3 +90,25 @@ CHI FA COSA?
 -Team di sviluppo: scrivere i programmi;
 -Tester: tracciare i comportamenti dei moduli del software;
 -Sistemisti: assemblare i moduli del software installare il programma completo negli ambienti di esecuzione;
+
+
+UX/UI DESIGN (Appunti Essenziali)
+
+1. UX DESIGN (User Experience / Esperienza Utente)
+- COSA È: Progettazione dell'INTERA esperienza che l'utente ha interagendo con un prodotto (sito, app). Riguarda il "come" l'utente si sente e se il prodotto è utile, usabile, e soddisfacente.
+- DOMANDE CHIAVE: È facile da usare? Risolve il mio problema?
+- FOCUS: Logica, struttura, flusso di navigazione (wireframe, prototipi).
+
+2. UI DESIGN (User Interface / Interfaccia Utente)
+- COSA È: Progettazione dell'ASPETTO visivo e interattivo di un prodotto. Riguarda l'"estetica" e i controlli.
+- DOMANDE CHIAVE: È bello da vedere? Dove clicco?
+- FOCUS: Colori, tipografia, pulsanti, icone, layout grafico.
+
+CONCETTO CHIAVE:
+L'UX è la STRUTTURA (l'architettura di una casa), l'UI è l'ARREDAMENTO (la pittura e i mobili). Lavorano sempre insieme.
+
+WIREFRAME(STRUTTURA)
+MOCK UP(DESIGN)
+
+
+
