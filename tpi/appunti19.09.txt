@@ -81,3 +81,12 @@ CONCETTI CHIAVE:
 Sprint: Ciclo di sviluppo a durata fissa per completare una serie di funzionalità definite.
 Scrum: Uno dei framework più popolari che implementa i principi Agile.
 Prodotto Funzionante: La metrica principale del progresso non è la documentazione, ma il software che funziona.
+
+
+CHI FA COSA?
+-Analista: definisce i requisiti;
+-Progettista: definire l'architettura della soluzione informatica;
+-Capo Progetto: definire l'elenco dei moduli e dei componenti della soluzione informatica, stima dei tempi e costi;
+-Team di sviluppo: scrivere i programmi;
+-Tester: tracciare i comportamenti dei moduli del software;
+-Sistemisti: assemblare i moduli del software installare il programma completo negli ambienti di esecuzione;
