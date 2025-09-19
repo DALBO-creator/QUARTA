@@ -29,8 +29,8 @@ ESERCIZIO: APP PER ORGANIZZARE VIAGGIO TRA AMICI
 
 TECNICHE DI RACCOLTA DEI REQUISITI
 interviste:
--strutturate: check list (domande strutturate) a cui ricevere una sisposta, una specie di questionario creato prima di parlare con il cliente.
--non strutturate: parlare liberamente con il cliente, consente di ottenere funzioni più dettagliate  eperosnalizzate.
+-strutturate: check list (domande strutturate) a cui ricevere una risposta, una specie di questionario creato prima di parlare con il cliente.
+-non strutturate: parlare liberamente con il cliente, consente di ottenere funzioni più dettagliate e personalizzate.
 
 questionario:
 dati quantitativi: domande a risposta chiusa o scale di valutazione (quanto spesso utilizzeresti questa funzionalità?).
@@ -39,5 +39,40 @@ vantaggi: possono raggiungere un vasto pubblico, raccolgono dati standardizzati,
 svantaggi: offrono meno profondità di analisi rispetto alle interviste.
 
 l'osservazione:
-vantaggi: consente di scoprire bisogni impliciti, fornisce dati concreti su come gli utenti lavorano realmente, mette in luce le insufficenze dell'app;
+vantaggi: consente di scoprire bisogni impliciti, fornisce dati concreti su come gli utenti lavorano realmente, mette in luce le insufficienze dell'app;
 svantaggi: può influenzare il comportamento degli utenti osservati, richiede tempo e pazienza, e l'interpretazione può essere soggettiva;
+
+
+ESERCIZIO: TRASFORMA BISOGNI IN USER STORY
+
+WHO: utente anziano
+WHAT: creazione di un design intuitivo
+WHY: per aiutarlo nella pianificazione del viaggio e nella comprensione dell'app.
+
+
+WHO: utente turista abituale
+WHAT: funzionalità che proponga le tappe di maggiore importanza
+WHY: per migliorare la sua esperienza
+
+
+WHO: utente medio
+WHAT: tempi di risposta brevi
+WHY: per migliorare l'utilizzo dell'applicazione
+
+MODELLI DI SVILUPPO SOFTWARE:
+1. WATERFALL (A Cascata)
+- NATURA: Modello tradizionale, sequenziale, rigido.
+- PROCESSO: Le fasi (Requisiti -> Design -> Sviluppo -> Test -> Rilascio) devono essere completate una dopo l'altra.
+- CAMBIAMENTI: Difficili e costosi una volta iniziate le fasi successive.
+- CONSEGNA: Un'unica grande consegna del prodotto alla fine del progetto.
+- IDEALE PER: Progetti con requisiti stabili e ben definiti fin dall'inizio.
+
+
+2. AGILE
+- NATURA: Modello moderno, iterativo, flessibile.
+- PROCESSO: Lavoro suddiviso in brevi cicli fissi chiamati "Sprint" (es. 2-4 settimane).
+- CAMBIAMENTI: Benvenuti. Il sistema si adatta continuamente alle nuove esigenze.
+- CONSEGNA: Consegna di incrementi funzionanti del prodotto alla fine di ogni Sprint.
+- IDEALE PER: Progetti complessi o dove i requisiti sono destinati a evolvere.
+- METRICA: Il software funzionante è più importante della documentazione formale.
+- COINVOLGIMENTO CLIENTE: Essenziale e continuo.
