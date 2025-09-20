@@ -1,0 +1,38 @@
+PROGETTO INFORMATICO
+Un progetto informatico è un insieme organizzato di attività, risorse e persone, finalizzato a sviluppare o implementare una soluzione specifica (software, sistema, applicazione) per soddisfare una richiesta o un bisogno definito dal committente (cliente o azienda). Deve avere un inizio e una fine chiari e un budget definito.
+
+RUOLI CHIAVE
+
+PROJECT MANAGER (PM)
+È il leader del progetto, il "capo" responsabile del successo finale e della sua esecuzione.
+- Responsabilità Principali: Pianificazione, esecuzione, e chiusura del progetto. Deve garantire che il progetto rispetti tempi (puntualità), costi (budget) e scopo (qualità).
+- Gestione Team: Distribuisce i ruoli e i compiti specifici all'interno del team di sviluppo.
+- Monitoraggio: Utilizza strumenti di gestione visuale come la **Kanban Board** (es. su Trello, Jira) per tracciare lo stato di avanzamento dei lavori e identificare eventuali ostacoli ("blocking").
+
+FASI DEL PIANO DI LAVORO (Sintesi del ciclo di vita)
+1. OBBIETTIVO: Definizione chiara di cosa si vuole raggiungere.
+2. STAKEHOLDER: Identificazione e analisi degli attori coinvolti.
+3. ANALISI & INTERVISTE: Raccolta dettagliata dei requisiti (funzionali e non) dal committente e dagli utenti finali.
+4. PERSONAS & USER STORY: Creazione di profili utente fittizi e definizione delle funzionalità dal loro punto di vista.
+5. MOCKUP & PROTOTIPAZIONE: Creazione di bozze grafiche e interattive (wireframe) dell'interfaccia utente (UI/UX).
+6. SVILUPPO: Scrittura del codice.
+7. TEST: Collaudo del software per trovare e correggere bug.
+8. PRODOTTO FINITO & RILASCIO: Consegna e implementazione della soluzione.
+
+DOMANDE FONDAMENTALI PER L'ANALISI INIZIALE
+- **Risultati/Obiettivi:** Quali sono i risultati misurabili che vogliamo raggiungere con questo progetto (es. aumentare le vendite, ridurre i tempi di attesa)?
+- **Obiettivi Aziendali:** In che modo questo progetto si allinea con la strategia e la missione a lungo termine dell'azienda?
+- **Motivazione (WHY):** Qual è la ragione critica o il problema specifico che il software deve risolvere?
+- **Successo:** Come definiremo il successo del progetto? Quali metriche useremo?
+
+STAKEHOLDER (Attori Coinvolti)
+- Scopo: Identificare tutti coloro che hanno un interesse, un impatto o saranno influenzati dal progetto (clienti, utenti finali, dirigenti, fornitori, ecc.).
+- Attività: Analisi delle loro aspettative, requisiti e potere/influenza sul progetto.
+- Output: Un elenco completo degli stakeholder e un riepilogo delle loro esigenze principali.
+
+USER STORY (Requisiti orientati all'utente)
+È una descrizione informale di una funzionalità software scritta dalla prospettiva dell'utente finale.
+Struttura Standard: "Come [WHO], voglio [WHAT], in modo da [WHY]."
+- **WHO:** Il tipo di utente o ruolo (es. "Come cliente registrato...").
+- **WHAT:** L'azione o la funzionalità che desidera (es. "...voglio tracciare lo stato del mio ordine...").
+- **WHY:** Il valore o il beneficio che ne deriva (es. "...in modo da non dover chiamare l'assistenza clienti.").

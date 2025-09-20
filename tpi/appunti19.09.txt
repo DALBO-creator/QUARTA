@@ -1,0 +1,114 @@
+CICLO DI SVILUPPO DEL PROGETTO INFORMATICO	
+
+l'ingegneria del software per mette di creare software con le seguenti caratteristiche:
+-affidabilità
+-efficienza
+-manutenibilità
+
+requisiti software e stakeholder 
+definizione dei requisiti: analisi completa dei bisogni dell'user per definire quello che il sistema deve fare.
+raccolta requisiti: operazione difficile, richiede + partecipanti (stakeholder)
+interviste: confronto con i clienti.
+
+analisi dei requisiti
+-requisiti funzionali: cosa deve fare il software.
+-requisiti non funzionali: caratteristiche di qualità del sistema.
+-requisiti di dominio: regole, normative o procedure che di pendono dal settore di applicazione.
+-requisiti di vincolo: condizioni a cui lo sviluppo deve attenersi. es: data di completamento progetto.
+-analisi fattibilità: valutare se il progetto possa essere realizzato in modo efficace e sostenibile.
+-analisi concorrenza: osservare e confrontare i prodotti simili già presenti nel settore di interesse.
+-User story: who? (l'utente a cui ci rivolgiamo), what? (il bisogno che vogliamo soddisfare), why? (il motivo per cui vogliamo soddisfarlo);
+
+ESERCIZIO: APP PER ORGANIZZARE VIAGGIO TRA AMICI
+
+-requisiti funzionali: creazione viaggio, invito amici, gestione partecipanti, profilo utente, condivisione spese, calendario per la prenotazione, calcolo del costo, proposta delle tappe, recensioni, possibilità di scelta della classe in cui viaggiare…
+-requisiti non funzionali: design intuitivo, prestazioni buone, AI chatbot per supporto alla prenotazione..
+-requisiti di dominio: supporto multi valuta per prenotazioni da regioni diverse e gestione fusi orari per regioni diverse, normative di privacy, accesso a delle mappe affidabili (Google Maps)..
+-requisiti di vincolo: budget massimo per sviluppo e lancio app: 50mila euro; termine massimo: marzo 2026; compatibilità su diversi OS (Android, Apple, MacOS, Windows)..
+
+
+TECNICHE DI RACCOLTA DEI REQUISITI
+interviste:
+-strutturate: check list (domande strutturate) a cui ricevere una risposta, una specie di questionario creato prima di parlare con il cliente.
+-non strutturate: parlare liberamente con il cliente, consente di ottenere funzioni più dettagliate e personalizzate.
+
+questionario:
+dati quantitativi: domande a risposta chiusa o scale di valutazione (quanto spesso utilizzeresti questa funzionalità?).
+dati qualitativi: domande aperte che lasciano libertà di espressione (quali sono le funzionalità più importanti che vorresti vedere nella tua app?).
+vantaggi: possono raggiungere un vasto pubblico, raccolgono dati standardizzati, anonimi.
+svantaggi: offrono meno profondità di analisi rispetto alle interviste.
+
+l'osservazione:
+vantaggi: consente di scoprire bisogni impliciti, fornisce dati concreti su come gli utenti lavorano realmente, mette in luce le insufficienze dell'app;
+svantaggi: può influenzare il comportamento degli utenti osservati, richiede tempo e pazienza, e l'interpretazione può essere soggettiva;
+
+
+ESERCIZIO: TRASFORMA BISOGNI IN USER STORY
+
+WHO: utente anziano
+WHAT: creazione di un design intuitivo
+WHY: per aiutarlo nella pianificazione del viaggio e nella comprensione dell'app.
+
+
+WHO: utente turista abituale
+WHAT: funzionalità che proponga le tappe di maggiore importanza
+WHY: per migliorare la sua esperienza
+
+
+WHO: utente medio
+WHAT: tempi di risposta brevi
+WHY: per migliorare l'utilizzo dell'applicazione
+
+MODELLI DI SVILUPPO SOFTWARE:
+1. WATERFALL (A Cascata)
+- NATURA: Modello tradizionale, sequenziale, rigido.
+- PROCESSO: Le fasi (Requisiti -> Design -> Sviluppo -> Test -> Rilascio) devono essere completate una dopo l'altra.
+- CAMBIAMENTI: Difficili e costosi una volta iniziate le fasi successive.
+- CONSEGNA: Un'unica grande consegna del prodotto alla fine del progetto.
+- IDEALE PER: Progetti con requisiti stabili e ben definiti fin dall'inizio.
+
+
+2. AGILE
+- NATURA: Modello moderno, iterativo, flessibile.
+- PROCESSO: Lavoro suddiviso in brevi cicli fissi chiamati "Sprint" (es. 2-4 settimane).
+- CAMBIAMENTI: Benvenuti. Il sistema si adatta continuamente alle nuove esigenze.
+- CONSEGNA: Consegna di incrementi funzionanti del prodotto alla fine di ogni Sprint.
+- IDEALE PER: Progetti complessi o dove i requisiti sono destinati a evolvere.
+- METRICA: Il software funzionante è più importante della documentazione formale.
+- COINVOLGIMENTO CLIENTE: Essenziale e continuo.
+
+CONCETTI CHIAVE:
+Sprint: Ciclo di sviluppo a durata fissa per completare una serie di funzionalità definite.
+Scrum: Uno dei framework più popolari che implementa i principi Agile.
+Prodotto Funzionante: La metrica principale del progresso non è la documentazione, ma il software che funziona.
+
+
+CHI FA COSA?
+-Analista: definisce i requisiti;
+-Progettista: definire l'architettura della soluzione informatica;
+-Capo Progetto: definire l'elenco dei moduli e dei componenti della soluzione informatica, stima dei tempi e costi;
+-Team di sviluppo: scrivere i programmi;
+-Tester: tracciare i comportamenti dei moduli del software;
+-Sistemisti: assemblare i moduli del software installare il programma completo negli ambienti di esecuzione;
+
+
+UX/UI DESIGN (Appunti Essenziali)
+
+1. UX DESIGN (User Experience / Esperienza Utente)
+- COSA È: Progettazione dell'INTERA esperienza che l'utente ha interagendo con un prodotto (sito, app). Riguarda il "come" l'utente si sente e se il prodotto è utile, usabile, e soddisfacente.
+- DOMANDE CHIAVE: È facile da usare? Risolve il mio problema?
+- FOCUS: Logica, struttura, flusso di navigazione (wireframe, prototipi).
+
+2. UI DESIGN (User Interface / Interfaccia Utente)
+- COSA È: Progettazione dell'ASPETTO visivo e interattivo di un prodotto. Riguarda l'"estetica" e i controlli.
+- DOMANDE CHIAVE: È bello da vedere? Dove clicco?
+- FOCUS: Colori, tipografia, pulsanti, icone, layout grafico.
+
+CONCETTO CHIAVE:
+L'UX è la STRUTTURA (l'architettura di una casa), l'UI è l'ARREDAMENTO (la pittura e i mobili). Lavorano sempre insieme.
+
+WIREFRAME(STRUTTURA)
+MOCK UP(DESIGN)
+
+
+
