@@ -3,3 +3,4 @@ public class Angolo {
     private int primi;
     private int secondi;
 }
+

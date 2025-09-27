@@ -8,16 +8,20 @@ public class Punto {
 
     public double distanza(Punto altroPunto) {
 
-        double deltaLat;
-        double deltaLongi;
+        public Angolo sottrai(Angolo a1, Angolo a2)
 
-        double a = Math.pow(Math.sin(deltaLat / 2), 2) + Math.cos(this.latitudine)*Math.cos(altroPunto.latitudine) * Math.pow(Math.sin(deltaLongi / 2), 2)
+
+
+        Angolo deltaLat = differenzaA(this.latitudine, altroPunto.latitudine);
+        Angolo deltaLongi= differenzaA(this.longitudine, altroPunto.longitudine);
+
+        double a = Math.pow(Math.sin(deltaLat / 2), 2) + (Math.cos(this.latitudine))*(Math.cos(altroPunto.latitudine)) * (Math.pow(Math.sin(deltaLongi / 2), 2));
 
         double R = 6371000;
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-        double dist = 0;
+        double d = R * c;
 
-        return dist;
+        return d;
     }
 }
