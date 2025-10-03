@@ -60,7 +60,17 @@ public class playlist {
 
     @Override
     public String toString() {
-        return "Playlist" + this.getNome() + " , " + this.canzoni + " brani, in " + this.status + " , " + this.corrente;
+        String converti="";
+        if (this.status == 0){
+            converti+="STOP";
+        }
+        else if (this.status == 1){
+            converti+="PLAY";
+        }
+        else if (this.status == 2){
+            converti+="PAUSE";
+        }
+        return "Playlist " + this.getNome() + ", " + this.getQuantiBrani() + " brani, in " + converti + " sul brano " + this.corrente;
     }
 
 
