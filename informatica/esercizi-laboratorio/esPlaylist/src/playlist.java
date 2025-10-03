@@ -58,6 +58,12 @@ public class playlist {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Playlist" + this.getNome() + " , " + this.canzoni + " brani, in " + this.status + " , " + this.corrente;
+    }
+
+
 
 
 
