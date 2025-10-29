@@ -103,4 +103,57 @@ n 			subnet mask 					numero reti		numero host
 
 
 
+ESERCIZIO 9:
+
+Dati
+
+Rete di partenza: 158.110.0.0
+Subnet-mask assunta: 255.255.192.0 = /18
+Default class: 158.x.x.x è classe B (default /16), qui si usano 2 bit in più per subnet (/18).
+
+Numero subnet ricavate da /16 → /18: si sono presi 2 bit => 
+2^2=4 sottoreti.
+
+Host per subnet: 
+2^14−2=16384−2=16382
+2
+14
+−2=16384−2=16382 host utilizzabili per sottorete.
+
+Incremento= 256 - valore decimale del terzo ottetto: 
+256−192=64
+
+Elenco sottoreti (network address, range host valido, broadcast)
+SUBNET 		INDIRIZZO DELLA SUBNET (network)	RANGE INDIRIZZI VALIDI			INDIRIZZO DI BROADCAST (ultimo indirizzo della sottorete)
+1		158.110.0.0/18				158.110.0.1 → 158.110.63.254		158.110.63.255		
+2		158.110.64.0/18				158.110.64.1 → 158.110.127.254		158.110.127.255
+3		158.110.128.0/18			158.110.128.1 → 158.110.191.254		158.110.191.255
+4		158.110.192.0/18			158.110.192.1 → 158.110.255.254		158.110.255.255
+
+
+
+ESERCIZIO 10:
+
+
+classe c:
+192.1.1.x
+
+classec: 11111111|11111111|11111111|00000000
+
+4 sottoreti --> 2 bit presi in prestito dalla parte host: 2^2=4
+
+11111111|11111111|11111111|11000000
+
+bit per gli host = 8-2 = 6 --> 2^6 = 64-2 = 62 host per sottorete
+
+mascgera di sottorete = 255.255.255.192 (11111111|11111111|11111111|11000000 in decimale)
+incremento nell'ultimo ottetto = 256- 192= 64 bit per ogni sottorete
+
+rete A : 192.1.1.1 - 192.1.1.50
+rete B : 192.1.1.65 - 192.1.1.114
+rete C : 192.1.1.115 - 192.1.1.164
+rete D : 192.1.1.165 - 192.1.1.214
+
+
+
 
