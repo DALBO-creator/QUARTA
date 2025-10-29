@@ -1,0 +1,106 @@
+ESERCIZIO 1:
+classe B: 
+16 bit net id
+16 bit host id
+30 sottoreti: potenza di 2 strettamente m,aggiore: 32--> 2^5
+tolgo 5 bit dalla parte host e li aggiungo alla parte net
+host:16-5=11
+net=16+5=21
+21 bit a 1, 11 bit a 0
+11111111|11111111|11111000|00000000
+255	   255     248	     0
+
+risposta c
+
+
+ESERCIZIO 2:
+classe b--> host 16+6, net 16-6
+11111111|11111111|11111100|00000000
+255	   255     252 	      0
+
+
+risposta d
+
+ESERCIZIO 3:
+risposta c	A e B
+
+
+ESERCIZIO 4:
+classe c--> 255 255 255 0
+
+2^5--> 32 (va bene per 30 host)
+11111111|11111111|11111111|00000000
+
+net 24+(8-5)=27
+host 5
+
+net 21, host 13
+11111111|11111111|11111111|11100000
+255	  255	    255	     224
+
+risposta a
+
+ESERCIZIO 5:
+regola: gli 1 non devono essere separati da 0;
+
+224 --> 11100000 --> valido
+192 --> 11000000 --> valido
+216 --> 11011000 --> non valido
+
+risposta c
+
+ESERCIZIO 6:
+risposta b
+
+ESERCIZIO 7:
+
+rete: 198.16.211.0 classe --> classe c --> 11111111|11111111|11111111|00000000
+subnet-mask: 255.255.255.192 ---> 11111111|11111111|11111111|11000000
+
+broadcast?
+broadcast ha tutti 1
+11111111-
+11000000=
+255-
+192
+=63
+
+broadcast: 198.16.211.63
+
+ESERCIZIO 8:
+
+classe c --> 255.255.255.0
+
+11111111|11111111|11111111|00000000
+
+net: 24, host; 8
+maschere fissa: ogni rete ha la stessa dimensione.
+
+n= bit presi dalla parte host
+numeri di reti = 2^n
+host = 2^(8-n)-2
+
+tolgo 2 per via dell'indirizzo di rete e di broadcast
+
+n 			subnet mask 					numero reti		numero host
+1			11111111|11111111|11111111|10000000		2			126
+			255	255	255      128
+
+2			11111111|11111111|11111111|11000000		4			62
+			255	255	255      192
+
+3			11111111|11111111|11111111|11100000		8			30
+			255	255	255      224
+
+4			11111111|11111111|11111111|11110000		16			14
+			255	255	255      240
+
+5			11111111|11111111|11111111|11111000		32			6
+			255	255	255      248
+
+6			11111111|11111111|11111111|11111100		64			2
+			255	255	255      252
+
+
+
+
