@@ -1,0 +1,80 @@
+dati:
+15 PC client
+3 server
+1 server e 5 client per ciascuna sottorete
+1 router per collegare tra loro le sottoreti
+
+RETE: classe B, indirizzo: 158.110.0.0
+SUBNET MASK: 255.255.255.0
+
+sottoreti totali: 3
+bit per:  --> 2^3 = 8
+
+
+
+classe b. 16 bit net id, 16 bit host id:
+11111111|11111111|00000000|00000000
+
+con subnetting:
+11111111|11111111|11111111|00000000
+
+subnet mask:
+11111111|11111111|11111111|00000000
+
+indirizzi di rete e broadcast per ogni sottorete:
+broadcast sottorete 1: 158.110.1.255
+broadcast sottorete 2: 158.110.2.255
+broadcast sottorete 3: 158.110.3.255
+rete sottorete 1: 158.110.1.0
+rete sottorete 2: 158.110.2.0
+rete sottorete 3: 158.110.3.0
+
+numero di host possibili per ogni rete: 
+255-2 =253
+
+255-0=255
+range possibili:
+range 1: 158.110.1.1	-	158.110.1.253
+range 2: 158.110.2.1	-	158.110.2.253
+range 3: 158.110.3.1	-	158.110.3.253
+
+assegnamento indirizzi ip:
+
+sottorete 1:
+server: 158.110.1.1
+host: 158.110.1.2-6
+router: 158.110.1.7
+broadcast: 158.110.1.255
+rete: 158.110.1.0
+
+sottorete 2:
+server: 158.110.2.1
+host: 158.110.2.2-6
+router: 158.110.2.7
+broadcast: 158.110.2.255
+rete: 158.110.2.0
+
+sottorete 3:
+server: 158.110.3.1
+host: 158.110.3.2-6
+router: 158.110.3.7
+broadcast: 158.110.3.255
+rete: 158.110.3.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
