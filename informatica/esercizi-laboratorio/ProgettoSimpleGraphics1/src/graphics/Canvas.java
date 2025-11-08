@@ -190,4 +190,10 @@ public class Canvas
         }
     	g.dispose();    	
     }
+
+    public static void close() {
+        if (canvas.frame != null) {
+            canvas.frame.dispose();
+        }
+    }
 }

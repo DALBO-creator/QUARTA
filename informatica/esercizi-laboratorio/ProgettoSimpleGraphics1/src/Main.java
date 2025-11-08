@@ -1,3 +1,6 @@
+import graphics.Canvas;
+import graphics.Picture;
+
 import java.util.Scanner;
 
 public class Main {
@@ -5,9 +8,8 @@ public class Main {
         Scanner in = new Scanner(System.in);
         Semaforo s = new Semaforo();
         int scelta = -1;
-
         do {
-            System.out.println("\n===== MENU SEMAFORO =====");
+            System.out.println("    MENU SEMAFORO   ");
             System.out.println("1) Accendi il semaforo");
             System.out.println("2) Avanza di luce");
             System.out.println("3) Mostra stato (acceso/spento)");
@@ -16,12 +18,6 @@ public class Main {
             System.out.println("6) Cambia stato (accendi/spegni)");
             System.out.println("0) Esci dal programma");
             System.out.print("Scelta: ");
-
-            if (!in.hasNextInt()) {
-                System.out.println("Inserisci un numero valido.");
-                in.next(); // scarta input non valido
-                continue;
-            }
 
             scelta = in.nextInt();
 
@@ -62,6 +58,8 @@ public class Main {
 
                 case 0:
                     System.out.println("Uscita dal programma...");
+                    Canvas.close(); //ho aggiunto un metodo alla classe Canvas il cui scopo è
+                                    // quello di chiudere il canvas quando si esce dal programma(0).
                     break;
 
                 default:
