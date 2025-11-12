@@ -1,0 +1,69 @@
+OBIETTIVO
+
+pianificare l’indirizzamento ip e la topologia logica per una man con tre lan (n1, n2, n3) e tre link punto‑punto (l1, l2, l3) tra i router, utilizzando il blocco 192.168.1.0/24.
+
+REQUISITI
+
+- n1: 50 host
+- n2: 40 host
+- n3: 20 host
+- tre link punto‑punto tra i router (2 indirizzi utili per ciascun link)
+
+SCELTA DELLE MASCHERE
+
+- n1: /26 (62 host utili)
+- n2: /26 (62 host utili)
+- n3: /27 (30 host utili)
+- link p2p: /30 (2 host utili)
+
+ASSEGNAZIONE DEGLI INDIRIZZI
+
+- n1 → rete 192.168.1.0/26, subnet mask 255.255.255.192
+  range host: 192.168.1.1 – 192.168.1.62, broadcast: 192.168.1.63, gateway suggerito: 192.168.1.1
+- n2 → rete 192.168.1.64/26, subnet mask 255.255.255.192
+  range host: 192.168.1.65 – 192.168.1.126, broadcast: 192.168.1.127, gateway suggerito: 192.168.1.65
+- n3 → rete 192.168.1.128/27, subnet mask 255.255.255.224
+  range host: 192.168.1.129 – 192.168.1.158, broadcast: 192.168.1.159, gateway suggerito: 192.168.1.129
+
+- l1 → rete 192.168.1.240/30, subnet mask 255.255.255.252
+  indirizzi utili: 192.168.1.241, 192.168.1.242, broadcast: 192.168.1.243
+- l2 → rete 192.168.1.244/30, subnet mask 255.255.255.252
+  indirizzi utili: 192.168.1.245, 192.168.1.246, broadcast: 192.168.1.247
+- l3 → rete 192.168.1.248/30, subnet mask 255.255.255.252
+  indirizzi utili: 192.168.1.249, 192.168.1.250, broadcast: 192.168.1.251
+
+PIANIFICAZIONE DI RETE
+
+- tre router r1, r2, r3 collegano rispettivamente le lan n1, n2, n3
+- i router sono interconnessi con tre link punto‑punto: l1 (r1–r2), l2 (r2–r3), l3 (r1–r3)
+
+ASSEGNAZIONE DELLE INTERFACCE
+
+- r1:
+  lan n1: 192.168.1.1/26
+  link l1 verso r2: 192.168.1.241/30
+  link l3 verso r3: 192.168.1.249/30
+
+- r2:
+  lan n2: 192.168.1.65/26
+  link l1 verso r1: 192.168.1.242/30
+  link l2 verso r3: 192.168.1.245/30
+
+- r3:
+  lan n3: 192.168.1.129/27
+  link l2 verso r2: 192.168.1.246/30
+  link l3 verso r1: 192.168.1.250/30
+
+ROUTING 
+- su r1:
+  rotta verso n2: 192.168.1.64/26 via 192.168.1.242 (l1)
+  rotta verso n3: 192.168.1.128/27 via 192.168.1.250 (l3)
+  se l3 non è disponibile: rotta verso n3 via 192.168.1.242 (inoltro tramite r2)
+
+- su r2:
+  rotta verso n1: 192.168.1.0/26 via 192.168.1.241 (l1)
+  rotta verso n3: 192.168.1.128/27 via 192.168.1.246 (l2)
+
+- su r3:
+  rotta verso n1: 192.168.1.0/26 via 192.168.1.249 (l3) oppure via 192.168.1.245 (l2) se l3 non è disponibile
+  rotta verso n2: 192.168.1.64/26 via 192.168.1.245 (l2)
