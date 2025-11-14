@@ -1,4 +1,5 @@
 public class Lampadina {
+
     private int potenza;
     private int luminosita;
     private String nome;
@@ -10,7 +11,7 @@ public class Lampadina {
         }
         this.potenza = potenza;
         this.nome = "";
-        this.luminosita = 50;
+        this.luminosita = 50;   // default 50%
         this.acceso = false;
     }
 
@@ -45,17 +46,13 @@ public class Lampadina {
     }
 
     public void aumentaIlluminazione() {
-        if (luminosita < 100) {
-            luminosita += luminosita * 10 / 100;
-            if (luminosita > 100) luminosita = 100;
-        }
+        luminosita += luminosita * 10 / 100;
+        if (luminosita > 100) luminosita = 100;
     }
 
     public void diminuisciIlluminazione() {
-        if (luminosita > 0) {
-            luminosita -= luminosita * 10 / 100;
-            if (luminosita < 0) luminosita = 0;
-        }
+        luminosita -= luminosita * 10 / 100;
+        if (luminosita < 0) luminosita = 0;
     }
 
     @Override
@@ -63,6 +60,6 @@ public class Lampadina {
         return "Nome: " + this.getNome() +
                 " | Potenza: " + this.getPotenza() +
                 "W | Stato: " + (this.getAcceso() ? "Accesa" : "Spenta") +
-                " | Illuminazione: " + this.getLuminosita() + "%";
+                " | Luminosità: " + this.getLuminosita() + "%";
     }
 }

@@ -1,5 +1,4 @@
-//HIDE
-import java.awt.Graphics2D;
+package graphics;import java.awt.Graphics2D;
 
 /**
  * A shape that can be drawn on a canvas.
