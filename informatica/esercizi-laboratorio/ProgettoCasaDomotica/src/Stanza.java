@@ -1,79 +1,61 @@
-import graphics.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Stanza {
 
     private String nome;
-    private Lampadina lampadina;
-
-    private Ellipse iconaLampadina;  // cerchio
-    private int x;
-    private int y;
+    private int x, y;
+    private List<Lampadina> lampadine;
 
     public Stanza(String nome, int x, int y) {
         this.nome = nome;
-        this.lampadina = new Lampadina(50); // default 50%
         this.x = x;
         this.y = y;
+        this.lampadine = new ArrayList<>();
 
-        // Crea l’icona grafica
-        iconaLampadina = new Ellipse(x, y, 30, 30);
-        iconaLampadina.setColor(Color.GRAY);
-        iconaLampadina.fill();
-
-        Canvas.getInstance().show(iconaLampadina);
+        lampadine.add(new Lampadina(50, x, y)); // una lampadina di default
     }
 
     public String getNome() {
         return nome;
     }
 
-    public Lampadina getLampadina() {
-        return lampadina;
+    public void aggiungiLampadina() {
+        // aggiunge una nuova lampadina nella stessa posizione
+        lampadine.add(new Lampadina(50, x, y));
+    }
+
+    public void rimuoviLampadina(int index) {
+        if (index >= 0 && index < lampadine.size()) {
+            lampadine.remove(index);
+        } else {
+            System.out.println("Indice non valido. Nessuna lampadina rimossa.");
+        }
     }
 
     public void accendi() {
-        lampadina.setAcceso(true);
-        aggiornaGrafica();
+        for (Lampadina l : lampadine) l.accendi();
     }
 
     public void spegni() {
-        lampadina.setAcceso(false);
-        aggiornaGrafica();
+        for (Lampadina l : lampadine) l.spegni();
     }
 
     public void aumentaLuminosita() {
-        lampadina.aumentaIlluminazione();
-        aggiornaGrafica();
+        for (Lampadina l : lampadine) l.aumentaLuminosita();
     }
 
     public void diminuisciLuminosita() {
-        lampadina.diminuisciIlluminazione();
-        aggiornaGrafica();
-    }
-
-    // Aggiorna il colore della lampadina grafica
-    private void aggiornaGrafica() {
-        if (!lampadina.getAcceso()) {
-            iconaLampadina.setColor(Color.GRAY);
-            iconaLampadina.fill();
-            Canvas.getInstance().repaint();
-            return;
-        }
-
-        int lum = lampadina.getLuminosita(); // 0–100
-
-        // Più luminosità → più gialla
-        int intensita = (int)(255 * (lum / 100.0));
-        Color c = new Color(255, 255, intensita);
-
-        iconaLampadina.setColor(c);
-        iconaLampadina.fill();
-
-        Canvas.getInstance().repaint();
+        for (Lampadina l : lampadine) l.diminuisciLuminosita();
     }
 
     @Override
     public String toString() {
-        return "Stanza: " + nome + " — " + lampadina.toString();
+        StringBuilder sb = new StringBuilder("Stanza: " + nome + "\n");
+        for (int i = 0; i < lampadine.size(); i++) {
+            sb.append("  Lampadina ").append(i).append(": ")
+                    .append(lampadine.get(i).toString()).append("\n");
+        }
+        return sb.toString();
     }
 }

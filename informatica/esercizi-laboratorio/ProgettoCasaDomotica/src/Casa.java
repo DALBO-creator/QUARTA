@@ -12,56 +12,40 @@ public class Casa {
         this.nome = nome;
         this.stanze = new ArrayList<>();
         this.piantina = new Picture(percorsoImmagine);
-        this.piantina.draw(); // Mostra la piantina sul canvas
+        this.piantina.draw();
     }
 
     public void aggiungiStanza(Stanza stanza) {
         stanze.add(stanza);
     }
 
-    public List<Stanza> getStanze() {
-        return stanze;
-    }
-
-    public Stanza cercaStanza(String nomeStanza) {
+    public Stanza cercaStanza(String nome) {
         for (Stanza s : stanze) {
-            if (s.getNome().equalsIgnoreCase(nomeStanza)) {
-                return s;
-            }
+            if (s.getNome().equalsIgnoreCase(nome)) return s;
         }
         return null;
     }
 
     public void accendiTutte() {
-        for (Stanza s : stanze) {
-            s.accendi();
-        }
+        for (Stanza s : stanze) s.accendi();
     }
 
     public void spegniTutte() {
-        for (Stanza s : stanze) {
-            s.spegni();
-        }
+        for (Stanza s : stanze) s.spegni();
     }
 
     public void aumentaLuminositaTutte() {
-        for (Stanza s : stanze) {
-            s.aumentaLuminosita();
-        }
+        for (Stanza s : stanze) s.aumentaLuminosita();
     }
 
     public void diminuisciLuminositaTutte() {
-        for (Stanza s : stanze) {
-            s.diminuisciLuminosita();
-        }
+        for (Stanza s : stanze) s.diminuisciLuminosita();
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Casa: " + nome + "\n");
-        for (Stanza s : stanze) {
-            sb.append(s.toString()).append("\n");
-        }
+        for (Stanza s : stanze) sb.append(s.toString()).append("\n");
         return sb.toString();
     }
 }

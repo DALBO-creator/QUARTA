@@ -1,20 +1,114 @@
+import java.io.*;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Casa casa = new Casa("Casa Domotica", "assets/piantinaCasa.jpg");
 
-        // Coordinate accurate basate sulla piantina visiva
-        casa.aggiungiStanza(new Stanza("Ingresso", 420, 140));      // in alto a sinistra
-        casa.aggiungiStanza(new Stanza("Cucina", 300, 140));      // in alto a sinistra
-        casa.aggiungiStanza(new Stanza("SalaPranzo", 300, 220));      // sotto Camera 1
-        casa.aggiungiStanza(new Stanza("Terrazzo", 220, 380));     // centro sinistra
-        casa.aggiungiStanza(new Stanza("Salotto", 275, 380));     // sotto Camera 2
-        casa.aggiungiStanza(new Stanza("CameraDaLetto", 500, 406));    // sotto Camera 3
-        casa.aggiungiStanza(new Stanza("Bagno1", 480, 220));  // sopra Camera 3
-        casa.aggiungiStanza(new Stanza("Bagno2", 555, 245)); // sotto Bagno 1
+        // Carica le stanze dal file
+        try (BufferedReader reader = new BufferedReader(new FileReader("assets/CoordinateStanze.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                String nome = parts[0];
+                int x = Integer.parseInt(parts[1]);
+                int y = Integer.parseInt(parts[2]);
+                casa.aggiungiStanza(new Stanza(nome, x, y));
+            }
+        } catch (IOException e) {
+            System.out.println("Errore nel file: " + e.getMessage());
+        }
 
-        casa.cercaStanza("Salotto").accendi();
-        casa.cercaStanza("Salotto").aumentaLuminosita();
+        Scanner input = new Scanner(System.in);
+        int scelta = -1;
 
-        System.out.println(casa);
+        while (scelta != 0) {
+            System.out.println("\n--- MENU CASA DOMOTICA ---");
+            System.out.println("1. Accendi una stanza");
+            System.out.println("2. Spegni una stanza");
+            System.out.println("3. Aumenta luminosità");
+            System.out.println("4. Diminuisci luminosità");
+            System.out.println("5. Accendi tutte");
+            System.out.println("6. Spegni tutte");
+            System.out.println("7. Mostra stato casa");
+            System.out.println("8. Aggiungi lampadina a una stanza");
+            System.out.println("9. Rimuovi lampadina da una stanza");
+            System.out.println("0. Esci");
+            System.out.print("Scelta: ");
+            scelta = input.nextInt();
+            input.nextLine(); // pulizia buffer
+
+            switch (scelta) {
+                case 1:
+                    System.out.print("Nome stanza: ");
+                    String nomeAccendi = input.nextLine();
+                    Stanza s1 = casa.cercaStanza(nomeAccendi);
+                    if (s1 != null) s1.accendi();
+                    else System.out.println("Stanza non trovata.");
+                    break;
+                case 2:
+                    System.out.print("Nome stanza: ");
+                    String nomeSpegni = input.nextLine();
+                    Stanza s2 = casa.cercaStanza(nomeSpegni);
+                    if (s2 != null) s2.spegni();
+                    else System.out.println("Stanza non trovata.");
+                    break;
+                case 3:
+                    System.out.print("Nome stanza: ");
+                    String nomeAum = input.nextLine();
+                    Stanza s3 = casa.cercaStanza(nomeAum);
+                    if (s3 != null) s3.aumentaLuminosita();
+                    else System.out.println("Stanza non trovata.");
+                    break;
+                case 4:
+                    System.out.print("Nome stanza: ");
+                    String nomeDim = input.nextLine();
+                    Stanza s4 = casa.cercaStanza(nomeDim);
+                    if (s4 != null) s4.diminuisciLuminosita();
+                    else System.out.println("Stanza non trovata.");
+                    break;
+                case 5:
+                    casa.accendiTutte();
+                    break;
+                case 6:
+                    casa.spegniTutte();
+                    break;
+                case 7:
+                    System.out.println(casa);
+                    break;
+                case 8:
+                    System.out.print("Nome stanza: ");
+                    String nomeAdd = input.nextLine();
+                    Stanza sAdd = casa.cercaStanza(nomeAdd);
+                    if (sAdd != null) {
+                        sAdd.aggiungiLampadina();
+                        System.out.println("Lampadina aggiunta.");
+                    } else {
+                        System.out.println("Stanza non trovata.");
+                    }
+                    break;
+                case 9:
+                    System.out.print("Nome stanza: ");
+                    String nomeRem = input.nextLine();
+                    Stanza sRem = casa.cercaStanza(nomeRem);
+                    if (sRem != null) {
+                        System.out.print("Indice lampadina da rimuovere: ");
+                        int index = input.nextInt();
+                        input.nextLine();
+                        sRem.rimuoviLampadina(index);
+                    } else {
+                        System.out.println("Stanza non trovata.");
+                    }
+                    break;
+                case 0:
+                    System.out.println("Uscita dal programma.");
+                    break;
+                default:
+                    System.out.println("Scelta non valida.");
+                    break;
+            }
+        }
+
+        input.close();
     }
 }

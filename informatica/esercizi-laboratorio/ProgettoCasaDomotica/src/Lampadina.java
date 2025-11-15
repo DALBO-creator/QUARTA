@@ -1,65 +1,64 @@
+import graphics.*;
+
 public class Lampadina {
 
     private int potenza;
     private int luminosita;
-    private String nome;
     private boolean acceso;
+    private Ellipse icona;
+    private int x, y;
 
-    public Lampadina(int potenza){
-        if (potenza < 0){
-            potenza = Math.abs(potenza);
-        }
-        this.potenza = potenza;
-        this.nome = "";
-        this.luminosita = 50;   // default 50%
+    public Lampadina(int potenza, int x, int y) {
+        this.potenza = Math.max(0, potenza);
+        this.luminosita = 50;
         this.acceso = false;
+        this.x = x;
+        this.y = y;
+
+        icona = new Ellipse(x, y, 30, 30);
+        icona.setColor(Color.GRAY);
+        icona.fill();
+        Canvas.getInstance().show(icona);
     }
 
-    public int getPotenza(){
-        return this.potenza;
+    public void accendi() {
+        acceso = true;
+        aggiornaGrafica();
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void spegni() {
+        acceso = false;
+        aggiornaGrafica();
     }
 
-    public String getNome() {
-        return this.nome;
-    }
-
-    public void setAcceso(boolean acceso) {
-        this.acceso = acceso;
-    }
-
-    public boolean getAcceso(){
-        return this.acceso;
-    }
-
-    public int getLuminosita() {
-        return this.luminosita;
-    }
-
-    public void setLuminosita(int luminosita) {
-        if (luminosita < 0) luminosita = 0;
+    public void aumentaLuminosita() {
+        luminosita += 25;
         if (luminosita > 100) luminosita = 100;
-        this.luminosita = luminosita;
+        aggiornaGrafica();
     }
 
-    public void aumentaIlluminazione() {
-        luminosita += luminosita * 10 / 100;
-        if (luminosita > 100) luminosita = 100;
-    }
-
-    public void diminuisciIlluminazione() {
-        luminosita -= luminosita * 10 / 100;
+    public void diminuisciLuminosita() {
+        luminosita -= 25;
         if (luminosita < 0) luminosita = 0;
+        aggiornaGrafica();
+    }
+
+    private void aggiornaGrafica() {
+        if (!acceso) {
+            icona.setColor(Color.GRAY);
+        } else {
+            double curva = Math.pow(luminosita / 100.0, 0.5); // curva più brillante
+            int intensita = (int)(255 * curva);
+            Color c = new Color(intensita, intensita, 0); // giallo acceso
+            icona.setColor(c);
+        }
+        icona.fill();
+        Canvas.getInstance().repaint();
     }
 
     @Override
-    public String toString(){
-        return "Nome: " + this.getNome() +
-                " | Potenza: " + this.getPotenza() +
-                "W | Stato: " + (this.getAcceso() ? "Accesa" : "Spenta") +
-                " | Luminosità: " + this.getLuminosita() + "%";
+    public String toString() {
+        return "Lampadina [" + (acceso ? "Accesa" : "Spenta") +
+                ", Luminosità: " + luminosita + "%]";
     }
 }
