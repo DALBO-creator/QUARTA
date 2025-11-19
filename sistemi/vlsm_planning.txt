@@ -1,0 +1,34 @@
+Sottorete 1 (90 host)
+Indirizzo di rete: 191.155.30.0
+Maschera: /25 (255.255.255.128)
+Maschera (binario): 11111111.11111111.11111111.10000000
+Gateway: 191.155.30.1
+Range host: 191.155.30.1 - 191.155.30.126
+Broadcast: 191.155.30.127
+Host #89: 191.155.30.89
+
+Sottorete 2 (40 host)
+Indirizzo di rete: 191.155.30.128
+Maschera: /26 (255.255.255.192)
+Maschera (binario): 11111111.11111111.11111111.11000000
+Gateway: 191.155.30.129
+Range host: 191.155.30.129 - 191.155.30.190
+Broadcast: 191.155.30.191
+Host #39: 191.155.30.167
+
+Sottorete 3 (20 host)
+Indirizzo di rete: 191.155.30.192
+Maschera: /27 (255.255.255.224)
+Maschera (binario): 11111111.11111111.11111111.11100000
+Gateway: 191.155.30.193
+Range host: 191.155.30.193 - 191.155.30.222
+Broadcast: 191.155.30.223
+Host #9: 191.155.30.201
+
+Sottorete 4 (10 host)
+Indirizzo di rete: 191.155.30.224
+Maschera: /28 (255.255.255.240)
+Maschera (binario): 11111111.11111111.11111111.11110000
+Gateway: 191.155.30.225
+Range host: 191.155.30.225 - 191.155.30.238
+Broadcast: 191.155.30.239
