@@ -1,3 +1,6 @@
+import graphics.Canvas;
+import graphics.Color;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,18 +23,43 @@ public class Stanza {
         return nome;
     }
 
-    public void aggiungiLampadina() {
-        // aggiungiamo una nuova lampadina, ma spostata di 40px verso destra
-        //supponiamo che le lampadine aggiunte si trovino sul soffitto in modo tale che possano stare sopra altri elementi della casa
-        lampadine.add(new Lampadina(50, x + 40, y));
+    public List<Lampadina> getLampadine() {
+        return lampadine;
     }
 
-    public void rimuoviLampadina(int index) {
-        if (index >= 0 && index < lampadine.size()) {
-            lampadine.remove(index);
+    public void aggiungiLampadina() {
+        //aggiungiamo una nuova lampadina, ma spostata di 40px verso destra
+        //supponiamo che le lampadine aggiunte si trovino sul soffitto in modo tale che possano stare sopra altri elementi della casa
+
+        if (lampadine.isEmpty()) {
+            //la prima lampadina è in posizione fissa
+
+            lampadine.add(new Lampadina(50, x, y));
+        }
+        else {
+            //le lampadine successive sono traslate verso destra rispetto all'asse x di 40px dall'ultima lampadina
+
+            lampadine.add(new Lampadina(50, lampadine.getLast().getIcona().getX()+40, y));
+        }
+    }
+
+    public void rimuoviLampadina(int i) {
+        if (i >= 0 && i < lampadine.size()) {
+            Lampadina l = lampadine.get(i);
+
+            //aggiungiamo il metodo hide alla classe Canvas, che rappresenta il contrario del metodo show
+            Canvas.getInstance().hide(l.getIcona());
+
+            //Rimuoviamo la lampadina dalla lista
+            lampadine.remove(i);
+
         } else {
             System.out.println("Indice non valido. Nessuna lampadina rimossa.");
         }
+    }
+
+    public void cambiaColore(){
+        for (Lampadina l : lampadine) l.cambiaColore();
     }
 
     public void accendi() {
@@ -49,7 +77,7 @@ public class Stanza {
     public void diminuisciLuminosita() {
         for (Lampadina l : lampadine) l.diminuisciLuminosita();
     }
-
+    //scegliamo di sperimentare l'utilizzo dello string builder
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Stanza: " + nome + "\n");

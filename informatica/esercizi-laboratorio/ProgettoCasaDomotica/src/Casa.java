@@ -21,9 +21,10 @@ public class Casa {
 
     public Stanza cercaStanza(String nome) {
         for (Stanza s : stanze) {
-            if (s.getNome().equalsIgnoreCase(nome)) return s;
+            if (s.getNome().equalsIgnoreCase(nome)) return s; //se i due nomi coincidono vuol dire che la stanza è stata trovata
+
         }
-        return null;
+        return null; //utile nel Main per indicare che la stanza non è stata trovata
     }
 
     public void accendiTutte() {
@@ -42,6 +43,7 @@ public class Casa {
         for (Stanza s : stanze) s.diminuisciLuminosita();
     }
 
+    // utiliziamo lo sb anche per la classe Casa
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Casa: " + nome + "\n");
