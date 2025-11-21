@@ -13,7 +13,7 @@ public class Stanza {
         this.y = y;
         this.lampadine = new ArrayList<>();
 
-        lampadine.add(new Lampadina(50, x, y)); // una lampadina di default
+        lampadine.add(new Lampadina(50, x, y)); // ogni stanza ha una lampadina di default con potenza = 50
     }
 
     public String getNome() {
@@ -21,8 +21,9 @@ public class Stanza {
     }
 
     public void aggiungiLampadina() {
-        // aggiunge una nuova lampadina nella stessa posizione
-        lampadine.add(new Lampadina(50, x, y));
+        // aggiungiamo una nuova lampadina, ma spostata di 40px verso destra
+        //supponiamo che le lampadine aggiunte si trovino sul soffitto in modo tale che possano stare sopra altri elementi della casa
+        lampadine.add(new Lampadina(50, x + 40, y));
     }
 
     public void rimuoviLampadina(int index) {

@@ -47,9 +47,9 @@ public class Lampadina {
         if (!acceso) {
             icona.setColor(Color.GRAY);
         } else {
-            double curva = Math.pow(luminosita / 100.0, 0.5); // curva più brillante
+            double curva = Math.pow(luminosita / 100.0, 0.5); // implementiamo una curva in modo che il colore venga modificato più dolcemente
             int intensita = (int)(255 * curva);
-            Color c = new Color(intensita, intensita, 0); // giallo acceso
+            Color c = new Color(intensita, intensita, 0); // rosso e verde hanno valori uguali, blu = 0, colore: giallo
             icona.setColor(c);
         }
         icona.fill();
@@ -58,7 +58,15 @@ public class Lampadina {
 
     @Override
     public String toString() {
-        return "Lampadina [" + (acceso ? "Accesa" : "Spenta") +
-                ", Luminosità: " + luminosita + "%]";
+        String stato;
+        if (acceso) {
+            stato = "Accesa";
+        } else {
+            stato = "Spenta";
+        }
+
+        return "Lampadina [" + stato + ", Luminosità: " + luminosita + "%]";
+
+
     }
 }
