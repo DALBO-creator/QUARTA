@@ -9,6 +9,8 @@ public class Lampadina {
     private boolean acceso;
     private Ellipse icona;
     private int x, y;
+    private Color coloreBase;
+
 
     public Lampadina(int potenza, int x, int y) {
         this.potenza = Math.max(0, potenza);
@@ -18,15 +20,19 @@ public class Lampadina {
         this.y = y;
 
         icona = new Ellipse(x, y, 30, 30);
-        icona.setColor(Color.GRAY);
+        coloreBase = new Color(128, 128, 128); // grigio iniziale spento
+        icona.setColor(coloreBase);
+
         icona.fill();
         Canvas.getInstance().show(icona);
     }
 
     public void accendi() {
         acceso = true;
+        coloreBase = new Color(255, 255, 0); // GIALLO
         aggiornaGrafica();
     }
+
 
     public void spegni() {
         acceso = false;
@@ -48,16 +54,23 @@ public class Lampadina {
     private void aggiornaGrafica() {
         if (!acceso) {
             icona.setColor(Color.GRAY);
-        }
-        else {
-            double curva = Math.pow(luminosita / 100.0, 0.5); // implementiamo una curva in modo che il colore venga modificato più dolcemente
-            int intensita = (int)(255 * curva);
-            Color c = new Color(intensita, intensita, 0); // rosso e verde hanno valori uguali, blu = 0, colore: giallo
+        } else {
+            double curva = Math.pow(luminosita / 100.0, 0.5);
+
+            int r = (int)(coloreBase.getRed()   * curva);
+            int g = (int)(coloreBase.getGreen() * curva);
+            int b = (int)(coloreBase.getBlue()  * curva);
+
+            Color c = new Color(r, g, b);
             icona.setColor(c);
         }
+
         icona.fill();
         Canvas.getInstance().repaint();
     }
+
+
+
     public void cambiaColore() {
         if (!acceso) {
             System.out.println("La lampadina è spenta. Accendila prima di cambiare il colore.");
@@ -73,24 +86,29 @@ public class Lampadina {
 
         int scelta = in.nextInt();
 
-        Color nuovoColore;
-
         switch (scelta) {
-            case 1 -> nuovoColore = Color.RED;
-            case 2 -> nuovoColore = Color.GREEN;
-            case 3 -> nuovoColore = Color.BLUE;
-            default -> {
+            case 1:
+                coloreBase = new Color(255, 0, 0);
+                break;
+
+            case 2:
+                coloreBase = new Color(0, 255, 0);
+                break;
+
+            case 3:
+                coloreBase = new Color(0, 0, 255);
+                break;
+
+            default:
                 System.out.println("Scelta non valida. Nessun cambiamento.");
                 return;
-            }
         }
 
-        icona.setColor(nuovoColore);
-        icona.fill();
-        Canvas.getInstance().repaint();
-
+        aggiornaGrafica();
         System.out.println("Colore cambiato con successo!");
     }
+
+
 
     public Ellipse getIcona(){
         return this.icona;
