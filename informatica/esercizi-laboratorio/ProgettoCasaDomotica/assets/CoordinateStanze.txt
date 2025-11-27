@@ -1,8 +1,8 @@
-Ingresso,420,140
-Cucina,300,140
-SalaPranzo,300,220
-Terrazzo,220,380
-Salotto,275,380
-CameraDaLetto,500,406
-Bagno1,480,220
-Bagno2,555,245
+Ingresso,420,140,1
+Studio,300,140,2
+SalaPranzo,315,250,3
+Terrazzo,220,380,1
+Salotto,275,380,3
+CameraDaLetto,500,406,2
+Bagno1,480,220,1
+Bagno2,555,245,1

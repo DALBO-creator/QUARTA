@@ -1,12 +1,14 @@
 import graphics.*;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Casa {
+public class Casa implements Serializable {
 
     private String nome;
     private List<Stanza> stanze;
-    private Picture piantina;
+    private transient Picture piantina; // le istanze del package graphics non sono serializzabili
 
     public Casa(String nome, String percorsoImmagine) {
         this.nome = nome;
@@ -33,14 +35,6 @@ public class Casa {
 
     public void spegniTutte() {
         for (Stanza s : stanze) s.spegni();
-    }
-
-    public void aumentaLuminositaTutte() {
-        for (Stanza s : stanze) s.aumentaLuminosita();
-    }
-
-    public void diminuisciLuminositaTutte() {
-        for (Stanza s : stanze) s.diminuisciLuminosita();
     }
 
     // utiliziamo lo sb anche per la classe Casa

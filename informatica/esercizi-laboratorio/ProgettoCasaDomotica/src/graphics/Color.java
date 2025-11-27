@@ -1,4 +1,6 @@
 package graphics;
+
+
 public class Color
 {
     private int red;

@@ -1,35 +1,40 @@
 import graphics.*;
 
-import java.util.Scanner;
+import java.io.Serializable;
 
-public class Lampadina {
-
-    private int potenza;
+public class Lampadina implements Serializable {
     private int luminosita;
     private boolean acceso;
-    private Ellipse icona;
+    private transient Ellipse icona; // le istanze del package graphics non sono serializzabili
+                                     // quindi dichiariamo questo campo come transient
     private int x, y;
-    private Color coloreBase;
+    private transient Color coloreBase; // le istanze del package graphics non sono serializzabili
 
 
-    public Lampadina(int potenza, int x, int y) {
-        this.potenza = Math.max(0, potenza);
-        this.luminosita = 50;
+    private static final Color GRIGIO_INIZIALE = new Color(128, 128, 128);
+
+    public Lampadina(int luminosita, int x, int y) {
+        this.luminosita = Math.max(0, Math.min(luminosita, 100));
         this.acceso = false;
         this.x = x;
         this.y = y;
 
         icona = new Ellipse(x, y, 30, 30);
-        coloreBase = new Color(128, 128, 128); // grigio iniziale spento
-        icona.setColor(coloreBase);
+        coloreBase = GRIGIO_INIZIALE; // colore logico iniziale
+        icona.setColor(GRIGIO_INIZIALE);
 
         icona.fill();
         Canvas.getInstance().show(icona);
     }
 
     public void accendi() {
-        acceso = true;
-        coloreBase = new Color(255, 255, 0); // GIALLO
+        if (!acceso) {
+            acceso = true;
+            // Se la lampadina è nuova (grigia), viene assegnato il giallo come colore di default
+            if (coloreBase.equals(GRIGIO_INIZIALE)) { //grigio assegnato dal costruttore
+                coloreBase = new Color(255, 255, 0); // GIALLO
+            }
+        }
         aggiornaGrafica();
     }
 
@@ -53,7 +58,7 @@ public class Lampadina {
 
     private void aggiornaGrafica() {
         if (!acceso) {
-            icona.setColor(Color.GRAY);
+            icona.setColor(GRIGIO_INIZIALE); // spento = sempre grigio
         } else {
             double curva = Math.pow(luminosita / 100.0, 0.5);
 
@@ -68,35 +73,29 @@ public class Lampadina {
         icona.fill();
         Canvas.getInstance().repaint();
     }
+    public int getLuminosita() {
+        return this.luminosita;
+    }
 
 
 
-    public void cambiaColore() {
+    public void cambiaColore(int scelta) {
         if (!acceso) {
             System.out.println("La lampadina è spenta. Accendila prima di cambiare il colore.");
             return;
         }
 
-        Scanner in = new Scanner(System.in);
-        System.out.println("Scegli il colore della lampadina:");
-        System.out.println("1) ROSSO");
-        System.out.println("2) VERDE");
-        System.out.println("3) BLU");
-        System.out.print("Scelta: ");
-
-        int scelta = in.nextInt();
-
         switch (scelta) {
             case 1:
-                coloreBase = new Color(255, 0, 0);
+                coloreBase = new Color(255, 0, 0);   // ROSSO
                 break;
 
             case 2:
-                coloreBase = new Color(0, 255, 0);
+                coloreBase = new Color(0, 255, 0);   // VERDE
                 break;
 
             case 3:
-                coloreBase = new Color(0, 0, 255);
+                coloreBase = new Color(0, 0, 255);   // BLU
                 break;
 
             default:
@@ -107,6 +106,7 @@ public class Lampadina {
         aggiornaGrafica();
         System.out.println("Colore cambiato con successo!");
     }
+
 
 
 
@@ -127,4 +127,6 @@ public class Lampadina {
 
 
     }
+
+
 }
