@@ -30,7 +30,7 @@ public class Lampadina implements Serializable {
     public void accendi() {
         if (!acceso) {
             acceso = true;
-            // Se la lampadina è nuova (grigia), viene assegnato il giallo come colore di default
+            // Se la lampadina è nuova (grigia), viene assegnato il giallo come colore di default alla prima accensione
             if (coloreBase.equals(GRIGIO_INIZIALE)) { //grigio assegnato dal costruttore
                 coloreBase = new Color(255, 255, 0); // GIALLO
             }
@@ -96,6 +96,10 @@ public class Lampadina implements Serializable {
 
             case 3:
                 coloreBase = new Color(0, 0, 255);   // BLU
+                break;
+
+            case 4:
+                coloreBase = new Color(255, 255, 0);   // GIALLO
                 break;
 
             default:

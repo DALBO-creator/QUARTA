@@ -77,6 +77,7 @@ public class Stanza implements Serializable {
         System.out.println("1) ROSSO");
         System.out.println("2) VERDE");
         System.out.println("3) BLU");
+        System.out.println("4) GIALLO");
         System.out.print("Scelta: ");
         int scelta = in.nextInt();
 
