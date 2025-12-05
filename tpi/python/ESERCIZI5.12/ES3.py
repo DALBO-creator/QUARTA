@@ -12,6 +12,6 @@ def nPrimi (lista):
             primi.append(n)
     return primi       
     
-            
+print(nPrimi(range(1,14)))           
 
         
