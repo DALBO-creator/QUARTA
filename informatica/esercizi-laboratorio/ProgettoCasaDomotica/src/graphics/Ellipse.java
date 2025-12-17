@@ -2,6 +2,7 @@ package graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
 
+
 public class Ellipse implements Shape
 {
     private Color color = Color.BLACK;
