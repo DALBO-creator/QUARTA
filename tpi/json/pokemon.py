@@ -2,8 +2,8 @@ import json
 import requests
 import os
 
-os.environ["HTTP_PROXY"] = "http://127.0.0.1:8888"
-os.environ["HTTPS_PROXY"] = "http://127.0.0.1:8888"
+# os.environ["HTTP_PROXY"] = "http://127.0.0.1:8888"
+# os.environ["HTTPS_PROXY"] = "http://127.0.0.1:8888"
 
 url = "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json"
 
