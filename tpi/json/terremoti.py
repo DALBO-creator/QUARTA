@@ -1,4 +1,8 @@
 import requests
+import os
+
+os.environ["HTTP_PROXY"] = "http://127.0.0.1:8888"
+os.environ["HTTPS_PROXY"] = "http://127.0.0.1:8888"
 from datetime import datetime
 
 # URL dati terremoti della settimana
