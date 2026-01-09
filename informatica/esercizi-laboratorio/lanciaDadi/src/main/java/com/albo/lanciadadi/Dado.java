@@ -1,30 +1,41 @@
 package com.albo.lanciadadi;
 
+import java.util.Random;
+
 public class Dado {
 
-    private int faccieDado;
+    private int facce;
+    private int valore;
+    private static final Random random = new Random();
 
-    Dado(){
-        this.faccieDado = 6;
-    }
-    Dado(int N){
-        if (N<2 || N==3) {
-            this.faccieDado = 6;
-        }
-        else {
-            this.faccieDado = N;
-        }
-    }
-    Dado(Dado dadoCopia) {
-        this.faccieDado = dadoCopia.faccieDado;
+    public Dado() {
+        this(6);
     }
 
-    public int Lancia(){
-        return (int) (Math.random() * 10 % this.faccieDado + 1);
+    public Dado(int facce) {
+        if (facce < 2 || facce == 3) {
+            this.facce = 6;
+        } else {
+            this.facce = facce;
+        }
+    }
+
+    public Dado(Dado altro) {
+        this.facce = altro.facce;
+        this.valore = altro.valore;
+    }
+
+    public int lancia() {
+        valore = random.nextInt(facce) + 1;
+        return valore;
+    }
+
+    public int getValore() {
+        return valore;
     }
 
     @Override
     public String toString() {
-        return "Faccie del dado: " + this.faccieDado;
+        return "" + valore;
     }
 }
