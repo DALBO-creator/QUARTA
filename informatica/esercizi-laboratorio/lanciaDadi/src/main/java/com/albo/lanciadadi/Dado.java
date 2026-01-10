@@ -20,6 +20,10 @@ public class Dado {
         }
     }
 
+    public void setFacce(int facce) {
+        this.facce = facce;
+    }
+
     public Dado(Dado altro) {
         this.facce = altro.facce;
         this.valore = altro.valore;

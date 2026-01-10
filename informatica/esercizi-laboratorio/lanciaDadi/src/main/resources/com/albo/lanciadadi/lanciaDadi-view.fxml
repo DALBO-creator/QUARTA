@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="385.0" prefWidth="313.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.albo.lanciadadi.LanciaDadiController">
+<VBox alignment="CENTER" prefHeight="385.0" prefWidth="313.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.albo.lanciadadi.LanciaDadiController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -16,22 +16,58 @@
       <font>
          <Font size="52.0" />
       </font></Label>
-   <HBox prefHeight="100.0" prefWidth="200.0">
+   <HBox alignment="CENTER" prefHeight="117.0" prefWidth="273.0">
       <children>
-         <Label text="tipo di dado" />
-         <Button mnemonicParsing="false" text="6" />
-         <Button mnemonicParsing="false" text="10" />
-         <Button mnemonicParsing="false" text="20" />
-         <Label text="Label" />
+         <Label text="tipo di dado">
+            <font>
+               <Font size="18.0" />
+            </font></Label>
+         <Button fx:id="sixButton" mnemonicParsing="false" onAction="#onSixButtonClick" text="6">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin></Button>
+         <Button fx:id="tenButton" mnemonicParsing="false" onAction="#onTenButtonClick" text="10">
+            <HBox.margin>
+               <Insets left="6.0" />
+            </HBox.margin></Button>
+         <Button fx:id="twentyButton" mnemonicParsing="false" onAction="#onTwentyButtonClick" text="20">
+            <HBox.margin>
+               <Insets left="6.0" />
+            </HBox.margin></Button>
+         <Label fx:id="lblType" text="N">
+            <font>
+               <Font size="36.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin></Label>
       </children>
    </HBox>
    <HBox prefHeight="100.0" prefWidth="200.0">
       <children>
-         <Label text="numero di dadi" />
-         <Button mnemonicParsing="false" text="1" />
-         <Button mnemonicParsing="false" text="2" />
-         <Button mnemonicParsing="false" text="3" />
-         <Label text="Label" />
+         <Label text="numero di dadi">
+            <font>
+               <Font size="14.0" />
+            </font></Label>
+         <Button fx:id="oneButton" mnemonicParsing="false" onAction="#onOneButtonClick" text="1">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin></Button>
+         <Button fx:id="twoButton" mnemonicParsing="false" onAction="#onTwoButtonClick" text="2">
+            <HBox.margin>
+               <Insets left="6.0" />
+            </HBox.margin></Button>
+         <Button fx:id="threeButton" mnemonicParsing="false" onAction="#onThreeButtonClick" text="3">
+            <HBox.margin>
+               <Insets left="6.0" />
+            </HBox.margin></Button>
+         <Label fx:id="lblNumber" text="N">
+            <font>
+               <Font size="36.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin></Label>
       </children>
    </HBox>
     <Button onAction="#onLanciaButtonClick" text="Lancia">
