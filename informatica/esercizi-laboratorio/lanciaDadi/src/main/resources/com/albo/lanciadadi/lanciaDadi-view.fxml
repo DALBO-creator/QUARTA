@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="385.0" prefWidth="313.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.albo.lanciadadi.LanciaDadiController">
+<VBox alignment="CENTER" prefHeight="385.0" prefWidth="497.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.albo.lanciadadi.LanciaDadiController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
     <Label fx:id="lblRisultato" text="0">
       <font>
-         <Font size="52.0" />
+         <Font size="64.0" />
       </font></Label>
    <HBox alignment="CENTER" prefHeight="117.0" prefWidth="273.0">
       <children>
@@ -43,15 +43,15 @@
             </HBox.margin></Label>
       </children>
    </HBox>
-   <HBox prefHeight="100.0" prefWidth="200.0">
+   <HBox alignment="CENTER" prefHeight="40.0" prefWidth="457.0">
       <children>
          <Label text="numero di dadi">
             <font>
-               <Font size="14.0" />
+               <Font size="18.0" />
             </font></Label>
          <Button fx:id="oneButton" mnemonicParsing="false" onAction="#onOneButtonClick" text="1">
             <HBox.margin>
-               <Insets left="20.0" />
+               <Insets left="10.0" />
             </HBox.margin></Button>
          <Button fx:id="twoButton" mnemonicParsing="false" onAction="#onTwoButtonClick" text="2">
             <HBox.margin>
@@ -61,7 +61,7 @@
             <HBox.margin>
                <Insets left="6.0" />
             </HBox.margin></Button>
-         <Label fx:id="lblNumber" text="N">
+         <Label fx:id="lblNumber" prefHeight="77.0" prefWidth="27.0" text="N">
             <font>
                <Font size="36.0" />
             </font>
@@ -69,6 +69,12 @@
                <Insets left="15.0" />
             </HBox.margin></Label>
       </children>
+      <padding>
+         <Insets top="10.0" />
+      </padding>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
    </HBox>
     <Button onAction="#onLanciaButtonClick" text="Lancia">
       <font>

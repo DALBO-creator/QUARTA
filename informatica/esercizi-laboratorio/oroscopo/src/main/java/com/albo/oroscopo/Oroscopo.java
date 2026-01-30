@@ -1,6 +1,10 @@
 package com.albo.oroscopo;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Random;
 
 public class Oroscopo {
     private LocalDate dataNascita;
@@ -41,35 +45,30 @@ public class Oroscopo {
     }
     public String getOroscopo() {
         String segno = getSegnoZodiacale();
+        int scelta = new Random().nextInt(4);
+        String ritorno = "";
 
-        switch (segno) {
-            case "Ariete":
-                return "Giornata piena di energia. Ottimo momento per iniziare qualcosa di nuovo.";
-            case "Toro":
-                return "Serve pazienza, ma i risultati arriveranno. Attenzione alle spese.";
-            case "Gemelli":
-                return "Comunicazione al top. Un confronto chiarirà molte cose.";
-            case "Cancro":
-                return "Le emozioni guidano le tue scelte. Ascoltati, ma resta con i piedi per terra.";
-            case "Leone":
-                return "Sei al centro dell’attenzione. Usa il tuo carisma con intelligenza.";
-            case "Vergine":
-                return "Precisione e organizzazione ti faranno brillare oggi.";
-            case "Bilancia":
-                return "Cerca equilibrio nelle relazioni. Una decisione va presa.";
-            case "Scorpione":
-                return "Giornata intensa. Segui l’istinto, ma evita gli eccessi.";
-            case "Sagittario":
-                return "Voglia di libertà e novità. Ottimo momento per fare progetti.";
-            case "Capricorno":
-                return "Il lavoro richiede impegno, ma la costanza verrà premiata.";
-            case "Acquario":
-                return "Idee brillanti e originali. Condividile senza paura.";
-            case "Pesci":
-                return "Sensibilità accentuata. Creatività e intuizione in primo piano.";
-            default:
-                return "Le stelle sono confuse oggi… riprova domani!";
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/com/albo/oroscopo/oroscopo.txt"))) {
+
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] parti = linea.split("\\|");
+
+                String segnoFile = parti[0];
+                int numeroFile = Integer.parseInt(parti[1]);
+                String frase = parti[2];
+
+                if (segnoFile.equals(segno) && numeroFile == scelta) {
+                    ritorno = frase;
+                    break;
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+        return ritorno;
     }
 
 
