@@ -1,75 +1,97 @@
 package com.albo.bandierefx;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.util.List;
+
 public class BandiereController {
 
-    @FXML private ImageView imgBandiera;
-    @FXML private RadioButton rdb1, rdb2, rdb3, rdb4;
-    @FXML private ToggleGroup gruppo;
-    @FXML private Label lblPunteggio;
-    @FXML private Button btnScegli;
+    @FXML
+    private ImageView imgBandiera;
 
-    private Gestore gestore = new Gestore();
+    @FXML
+    private RadioButton rdb1;
+
+    @FXML
+    private RadioButton rdb2;
+
+    @FXML
+    private RadioButton rdb3;
+
+    @FXML
+    private RadioButton rdb4;
+
+    @FXML
+    private ToggleGroup gruppo;
+
+    @FXML
+    private Label lblPunteggio;
+
+    private List<Scelta> domande;
+    private int indice = 0;
+    private int punteggio = 0;
 
     @FXML
     public void initialize() {
-        gestore.caricaDati("elenco.txt");
-        aggiornaInterfaccia();
+
+        domande = Gestore.caricaDomande();
+        mostraDomanda();
+    }
+
+    private void mostraDomanda() {
+
+        if (indice >= domande.size()) {
+
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Quiz finito. Punteggio: " + punteggio);
+            a.show();
+            return;
+        }
+
+        Scelta s = domande.get(indice);
+
+        Image img = new Image(s.getUrl());
+        imgBandiera.setImage(img);
+
+        rdb1.setText(s.getOp1());
+        rdb2.setText(s.getOp2());
+        rdb3.setText(s.getOp3());
+        rdb4.setText(s.getOp4());
+
+        gruppo.selectToggle(null);
+
+        lblPunteggio.setText("Punteggio: " + punteggio);
     }
 
     @FXML
     protected void onHelloButtonClick() {
+
         RadioButton selezionato = (RadioButton) gruppo.getSelectedToggle();
 
         if (selezionato == null) {
-            mostraAvviso("Attenzione", "Seleziona un'opzione prima di continuare!");
+
+            Alert a = new Alert(Alert.AlertType.WARNING);
+            a.setContentText("Seleziona una risposta");
+            a.show();
             return;
         }
 
-        gestore.controllaRisposta(selezionato.getText());
+        String risposta = selezionato.getText();
 
-        lblPunteggio.setText("Punti: " + gestore.getPunteggio() + "/" + gestore.getTotale());
+        Scelta s = domande.get(indice);
 
-        if (!gestore.isFinito()) {
-            aggiornaInterfaccia();
-        } else {
-            btnScegli.setDisable(true);
-            mostraAvviso("Quiz Terminato", "Hai totalizzato " + gestore.getPunteggio() + " punti!");
+        if (s.verifica(risposta)) {
+            punteggio = punteggio + 1;
         }
-    }
 
-    private void aggiornaInterfaccia() {
-        Gestore.Domanda d = gestore.getDomandaCorrente();
-        if (d != null) {
-            // Caricamento immagine (gestisce link o percorsi locali)
-            try {
-                imgBandiera.setImage(new Image(d.url));
-            } catch (Exception e) {
-                System.out.println("Impossibile caricare l'immagine: " + d.url);
-            }
+        indice = indice + 1;
 
-            // Imposta i testi dei radio button
-            rdb1.setText(d.o1);
-            rdb2.setText(d.o2);
-            rdb3.setText(d.o3);
-            rdb4.setText(d.o4);
-
-            // Deseleziona tutto per la nuova domanda
-            if (gruppo.getSelectedToggle() != null) {
-                gruppo.getSelectedToggle().setSelected(false);
-            }
-        }
-    }
-
-    private void mostraAvviso(String titolo, String msg) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(titolo);
-        alert.setHeaderText(null);
-        alert.setContentText(msg);
-        alert.showAndWait();
+        mostraDomanda();
     }
 }
