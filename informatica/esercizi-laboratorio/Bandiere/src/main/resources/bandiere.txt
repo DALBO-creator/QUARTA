@@ -1,0 +1,10 @@
+italia.png;Italia
+francia.png;Francia
+germania.png;Germania
+spagna.png;Spagna
+portogallo.png;Portogallo
+regnounito.png;Regno Unito
+statiuniti.png;Stati Uniti
+canada.png;Canada
+brasile.png;Brasile
+argentina.png;Argentina
