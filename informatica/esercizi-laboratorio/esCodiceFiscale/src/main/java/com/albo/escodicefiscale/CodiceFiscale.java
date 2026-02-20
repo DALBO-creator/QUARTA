@@ -23,54 +23,85 @@ public class CodiceFiscale {
 
     public HashSet<Character> vocali = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
 
-    public String calcolaCognome (String cognome){
-        String ris = "";
-        for (int i = 0; i < cognome.length() ; i++) {
-            if (!vocali.contains(i) && ris.length() < 3) {
-                ris += i;
-            }
-        }
-        while (ris.length() < 3){
-            for (int i = 0; i < cognome.length() ; i++) {
-                if (vocali.contains(i)) {
-                    ris += i;
-                }
-            }
-        }
+    public String calcolaCognome(String cognome) {
+    StringBuilder ris = new StringBuilder();
+    cognome = cognome.toLowerCase();
 
-        while (ris.length() < 3){
-            ris += "x";
+    
+    for (int i = 0; i < cognome.length(); i++) {
+        char c = cognome.charAt(i);
+        if (!vocali.contains(c) && Character.isLetter(c)) {
+            ris.append(Character.toUpperCase(c));
         }
-
-        return ris;
+        if (ris.length() == 3) break;
     }
 
-    public String calcolaNome (String nome){
-        String ris = "";
-        ArrayList<Character> consonanti = new ArrayList<>();
-        int count = 0;
-        for (int i = 0; i < nome.length(); i++) {
-            if (!vocali.contains(i)){
-                consonanti.add(nome.charAt(i));
-                count++;
+    
+    if (ris.length() < 3) {
+        for (int i = 0; i < cognome.length(); i++) {
+            char c = cognome.charAt(i);
+            if (vocali.contains(c)) {
+                ris.append(Character.toUpperCase(c));
             }
+            if (ris.length() == 3) break;
         }
-        if (count >= 4){
-            ris += consonanti.get(0);
-            ris += consonanti.get(2);
-            ris += consonanti.get(3);
-        }
-        else {
-            ris += consonanti.get(0);
-            ris += consonanti.get(1);
-            ris += consonanti.get(2);
-        }
-        if (nome.length() < 3){
-            ris = "xxx";
-        }
-        return ris;
     }
 
+    
+    while (ris.length() < 3) {
+        ris.append("X");
+    }
+
+    return ris.toString();
+    }
+
+
+    public String calcolaNome(String nome) {
+    StringBuilder ris = new StringBuilder();
+    nome = nome.toLowerCase();
+
+    ArrayList<Character> consonanti = new ArrayList<>();
+    ArrayList<Character> vocaliNome = new ArrayList<>();
+
+    for (int i = 0; i < nome.length(); i++) {
+        char c = nome.charAt(i);
+        if (Character.isLetter(c)) {
+            if (!vocali.contains(c)) {
+                consonanti.add(c);
+            } else {
+                vocaliNome.add(c);
+            }
+        }
+    }
+
+    
+    if (consonanti.size() >= 4) {
+        ris.append(Character.toUpperCase(consonanti.get(0)));
+        ris.append(Character.toUpperCase(consonanti.get(2)));
+        ris.append(Character.toUpperCase(consonanti.get(3)));
+    } else {
+        for (char c : consonanti) {
+            ris.append(Character.toUpperCase(c));
+        }
+        for (char c : vocaliNome) {
+            if (ris.length() < 3)
+                ris.append(Character.toUpperCase(c));
+        }
+    }
+
+    while (ris.length() < 3) {
+        ris.append("X");
+    }
+
+    return ris.toString();
+    }
+
+    public String calcolaAnno(LocalDate data) {
+    int anno = data.getYear();
+    return String.valueOf(anno).substring(2);
+    }
+
+    
 
 }
 
