@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="225.0" prefWidth="216.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.albo.es7fx.SommaController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label fx:id="lblSomma" text="0">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblN1" text="numero 1" />
+   <Label fx:id="lblN2" text="numero 2" />
+    <Button onAction="#onHSommaButtonClick" text="somma" />
+</VBox>

@@ -1,0 +1,10 @@
+1492,Scoperta dell'America
+1789,Rivoluzione Francese
+1945,Fine della Seconda Guerra Mondiale
+1969,Sbarco dell'uomo sulla Luna
+1914,Inizio della Prima Guerra Mondiale
+1815,Battaglia di Waterloo
+1989,Caduta del Muro di Berlino
+1066,Battaglia di Hastings
+1776,Dichiarazione d'Indipendenza USA
+1912,Affondamento del Titanic

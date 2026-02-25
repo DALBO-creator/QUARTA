@@ -1,0 +1,48 @@
+Capricorno|0|Determinazione e costanza ti porteranno lontano oggi.
+Capricorno|1|Il lavoro richiede impegno, ma i risultati non tarderanno.
+Capricorno|2|Prenditi una pausa: anche la mente ha bisogno di riposo.
+Capricorno|3|Una scelta responsabile farà la differenza.
+Acquario|0|Idee originali ti distinguono dagli altri.
+Acquario|1|Un cambiamento inaspettato porta nuove opportunità.
+Acquario|2|Segui il tuo istinto, anche se va controcorrente.
+Acquario|3|Condividere un’idea sarà più utile del previsto.
+Pesci|0|Sensibilità e intuizione guidano le tue scelte.
+Pesci|1|La creatività oggi è la tua arma vincente.
+Pesci|2|Ascolta le emozioni, ma mantieni lucidità.
+Pesci|3|Un gesto gentile avrà grande valore.
+Ariete|0|Energia e iniziativa rendono la giornata dinamica.
+Ariete|1|Una sfida accende la tua determinazione.
+Ariete|2|Agisci senza rimandare: il momento è giusto.
+Ariete|3|Evita decisioni impulsive, rifletti un attimo.
+Toro|0|La pazienza oggi è la tua migliore alleata.
+Toro|1|Stabilità e concretezza portano serenità.
+Toro|2|Buon momento per sistemare questioni pratiche.
+Toro|3|Attenzione alle spese superflue.
+Gemelli|0|La comunicazione è al centro della giornata.
+Gemelli|1|Un confronto chiarisce una situazione ambigua.
+Gemelli|2|La curiosità ti apre nuove strade.
+Gemelli|3|Evita distrazioni e concentrati sull’essenziale.
+Cancro|0|Le emozioni sono intense, ma costruttive.
+Cancro|1|Ascolta chi ti è vicino: un consiglio sarà prezioso.
+Cancro|2|Proteggi ciò che ami senza chiuderti.
+Cancro|3|Un momento di calma aiuta a fare chiarezza.
+Leone|0|Il carisma oggi è dalla tua parte.
+Leone|1|Sei al centro dell’attenzione, sfruttalo bene.
+Leone|2|Mostra sicurezza senza arroganza.
+Leone|3|Una leadership naturale porta risultati.
+Vergine|0|Precisione e metodo rendono tutto più semplice.
+Vergine|1|L’organizzazione ti fa risparmiare tempo.
+Vergine|2|Non essere troppo critico con te stesso.
+Vergine|3|Un dettaglio farà la differenza.
+Bilancia|0|Cerca equilibrio nelle relazioni.
+Bilancia|1|Una decisione va presa con calma.
+Bilancia|2|Il dialogo risolve più di quanto immagini.
+Bilancia|3|Evita compromessi forzati.
+Scorpione|0|Giornata intensa, ma ricca di intuizioni.
+Scorpione|1|Segui l’istinto, ma evita gli eccessi.
+Scorpione|2|Una verità viene a galla.
+Scorpione|3|Canalizza l’energia in modo costruttivo.
+Sagittario|0|Voglia di libertà e nuovi orizzonti.
+Sagittario|1|Ottimo momento per fare progetti.
+Sagittario|2|Un viaggio o un’idea stimola la mente.
+Sagittario|3|Mantieni i piedi per terra mentre sogni in grande.
