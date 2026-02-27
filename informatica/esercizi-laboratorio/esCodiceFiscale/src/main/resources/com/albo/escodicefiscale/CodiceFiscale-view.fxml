@@ -1,16 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.albo.escodicefiscale.CodiceFiscaleController">
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="357.0" prefWidth="343.0" spacing="15.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.albo.escodicefiscale.CodiceFiscaleController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Label text="Calcolo Codice Fiscale">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+
+    <GridPane hgap="10.0" vgap="10.0">
+        <Label text="Nome:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="txtNome" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Cognome:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="txtCognome" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Data di Nascita:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Sesso:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <RadioButton fx:id="rbM" selected="true" text="M">
+                <toggleGroup>
+                    <ToggleGroup fx:id="groupSesso" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbF" text="F" toggleGroup="$groupSesso" />
+        </HBox>
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <Button maxWidth="Infinity" onAction="#onCalcolaClick" text="Calcola" />
+
+    <Separator />
+
+          <Label text="Risultato:">
+        <font>
+            <Font name="System Italic" size="13.0" />
+        </font>
+    </Label>
+    <Label fx:id="lblRisultato" text="---">
+        <font>
+            <Font name="Monospaced Regular" size="18.0" />
+        </font>
+    </Label>
 </VBox>

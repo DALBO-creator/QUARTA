@@ -113,7 +113,7 @@ public class CodiceFiscale {
         String giornoStr = giorno.toString();
 
         if (sesso.equals("mascio")) {
-            return "0" + giornoStr;
+            return String.format("%02d", giorno);
         }
         else {
             giorno += 40;
@@ -135,45 +135,32 @@ public class CodiceFiscale {
                 + calcoloComune();
     }
     public char calcoloControllo() {
-
-        String primi15 = generaPrimi15();
+        String primi15 = generaPrimi15().toUpperCase();
         int somma = 0;
 
-        int[] valoriPari = {
-                0,1,2,3,4,5,6,7,8,9,
-                0,1,2,3,4,5,6,7,8,9,
-                10,11,12,13,14,15,16,17,18,19,
-                20,21,22,23,24,25
-        };
-
-        int[] valoriDispari = {
-                1,0,5,7,9,13,15,17,19,21,
-                1,0,5,7,9,13,15,17,19,21,
-                2,4,18,20,11,3,6,8,12,14,
-                16,10,22,25,24,23
-        };
+        // Tabelle ufficiali Agenzia delle Entrate
+        int[] dispari = {1, 0, 5, 7, 9, 13, 15, 17, 19, 21, 2, 4, 18, 20, 11, 3, 6, 8, 12, 14, 16, 10, 22, 25, 24, 23};
+        int[] pari = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
 
         for (int i = 0; i < 15; i++) {
-
             char c = primi15.charAt(i);
-            int valore;
+            int index;
 
             if (Character.isDigit(c)) {
-                valore = c - '0';
+                index = c - '0';
             } else {
-                valore = c - 'A' + 10;
+                index = c - 'A';
             }
 
+            // i=0 è la prima posizione (dispari per l'algoritmo, che conta da 1)
             if ((i + 1) % 2 == 0) {
-                somma += valoriPari[valore];
+                somma += pari[index];
             } else {
-                somma += valoriDispari[valore];
+                somma += dispari[index];
             }
         }
 
-        int resto = somma % 26;
-
-        return (char) ('A' + resto);
+        return (char) ('A' + (somma % 26));
     }
 
 
