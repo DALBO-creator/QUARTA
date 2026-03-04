@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="357.0" prefWidth="343.0" spacing="15.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.albo.escodicefiscale.CodiceFiscaleController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <TextField fx:id="txtNome" promptText="nome" />
+      <TextField fx:id="txtCognome" promptText="cognome" />
+      <DatePicker fx:id="dtpData" promptText="data" />
+      <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="303.0" spacing="10.0">
+         <children>
+            <RadioButton fx:id="rdbM" mnemonicParsing="false" text="maschio">
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggleSesso" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rdbF" mnemonicParsing="false" text="femmina" toggleGroup="$toggleSesso" />
+         </children>
+      </HBox>
+      <Label fx:id="lblRisultato" text="codice fiscale" />
+      <Button fx:id="btnCalcola" mnemonicParsing="false" onAction="#onBtnCalcolaClick" text="calcola" />
+   </children>
+</VBox>
