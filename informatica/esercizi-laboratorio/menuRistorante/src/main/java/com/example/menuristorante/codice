@@ -1,0 +1,116 @@
+PROBLEMA 1
+
+menuRistorante-view.fxml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.albo.menuristorante.menuRistoranteController">
+
+    <Label text="Menu Ristorante"/>
+
+    <CheckBox fx:id="chkPizza" text="Pizza - 8€"/>
+    <CheckBox fx:id="chkPasta" text="Pasta - 7€"/>
+    <CheckBox fx:id="chkAcqua" text="Acqua - 2€"/>
+    <CheckBox fx:id="chkBibita" text="Bibita - 3€"/>
+    <CheckBox fx:id="chkDolce" text="Dolce - 4€"/>
+
+    <Button text="Calcola Totale" onAction="#onCalcolaTotale"/>
+
+    <Label fx:id="lblTotale" text="Totale: 0€"/>
+
+</VBox>
+```
+
+menuRistoranteController.java
+
+```java
+package com.albo.menuristorante;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+
+public class menuRistoranteController {
+
+    @FXML
+    private CheckBox chkPizza;
+
+    @FXML
+    private CheckBox chkPasta;
+
+    @FXML
+    private CheckBox chkAcqua;
+
+    @FXML
+    private CheckBox chkBibita;
+
+    @FXML
+    private CheckBox chkDolce;
+
+    @FXML
+    private Label lblTotale;
+
+    private menuRistorante model = new menuRistorante();
+
+    @FXML
+    protected void onCalcolaTotale() {
+
+        double totale = model.calcolaTotale(
+                chkPizza.isSelected(),
+                chkPasta.isSelected(),
+                chkAcqua.isSelected(),
+                chkBibita.isSelected(),
+                chkDolce.isSelected()
+        );
+
+        lblTotale.setText("Totale: " + totale + "€");
+    }
+}
+```
+
+menuRistorante.java
+
+```java
+package com.albo.menuristorante;
+
+public class menuRistorante {
+
+    private double prezzoPizza = 8;
+    private double prezzoPasta = 7;
+    private double prezzoAcqua = 2;
+    private double prezzoBibita = 3;
+    private double prezzoDolce = 4;
+
+    public double calcolaTotale(boolean pizza, boolean pasta, boolean acqua, boolean bibita, boolean dolce) {
+
+        double totale = 0;
+
+        if (pizza) {
+            totale += prezzoPizza;
+        }
+
+        if (pasta) {
+            totale += prezzoPasta;
+        }
+
+        if (acqua) {
+            totale += prezzoAcqua;
+        }
+
+        if (bibita) {
+            totale += prezzoBibita;
+        }
+
+        if (dolce) {
+            totale += prezzoDolce;
+        }
+
+        return totale;
+    }
+}
+```

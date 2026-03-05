@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="394.0" prefWidth="230.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esmenu.MenuController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label fx:id="lblPiatti" text="PIATTI" />
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <CheckBox fx:id="pChe0" mnemonicParsing="false" text="CheckBox">
+            <HBox.margin>
+               <Insets right="15.0" />
+            </HBox.margin></CheckBox>
+         <Label fx:id="pLbl0" text="Label" />
+      </children>
+   </HBox>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <CheckBox fx:id="pChe1" mnemonicParsing="false" text="CheckBox">
+            <HBox.margin>
+               <Insets right="15.0" />
+            </HBox.margin></CheckBox>
+         <Label fx:id="pLbl1" text="Label" />
+      </children>
+   </HBox>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <CheckBox fx:id="pChe2" mnemonicParsing="false" text="CheckBox">
+            <HBox.margin>
+               <Insets right="15.0" />
+            </HBox.margin></CheckBox>
+         <Label fx:id="pLbl2" text="Label" />
+      </children>
+   </HBox>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <CheckBox fx:id="pChe3" mnemonicParsing="false" text="CheckBox">
+            <HBox.margin>
+               <Insets right="15.0" />
+            </HBox.margin></CheckBox>
+         <Label fx:id="pLbl3" text="Label" />
+      </children>
+   </HBox>
+   <Label fx:id="lblBevande" text="BEVANDE" />
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <CheckBox fx:id="bChe0" mnemonicParsing="false" text="CheckBox">
+                <HBox.margin>
+                    <Insets right="15.0" />
+                </HBox.margin></CheckBox>
+            <Label fx:id="bLbl0" text="Label" />
+        </children>
+    </HBox>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <CheckBox fx:id="bChe1" mnemonicParsing="false" text="CheckBox">
+                <HBox.margin>
+                    <Insets right="15.0" />
+                </HBox.margin></CheckBox>
+            <Label fx:id="bLbl1" text="Label" />
+        </children>
+    </HBox>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <CheckBox fx:id="bChe2" mnemonicParsing="false" text="CheckBox">
+                <HBox.margin>
+                    <Insets right="15.0" />
+                </HBox.margin></CheckBox>
+            <Label fx:id="bLbl2" text="Label" />
+        </children>
+    </HBox>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <CheckBox fx:id="bChe3" mnemonicParsing="false" text="CheckBox">
+                <HBox.margin>
+                    <Insets right="15.0" />
+                </HBox.margin></CheckBox>
+            <Label fx:id="bLbl3" text="Label" />
+        </children>
+    </HBox>
+   <Button fx:id="btnPrezzo" mnemonicParsing="false" onAction="#onCalcolaButtonClick" text="PREZZO" />
+   <Label fx:id="lblPrezzo" text="---" />
+</VBox>

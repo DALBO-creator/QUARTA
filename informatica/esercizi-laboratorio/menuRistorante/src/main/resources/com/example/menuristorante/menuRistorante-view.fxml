@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.menuristorante.menuRistoranteController">
+
+    <Label text="Menu Ristorante"/>
+
+    <CheckBox fx:id="chkPizza" text="Pizza - 8€"/>
+    <CheckBox fx:id="chkPasta" text="Pasta - 7€"/>
+    <CheckBox fx:id="chkAcqua" text="Acqua - 2€"/>
+    <CheckBox fx:id="chkBibita" text="Bibita - 3€"/>
+    <CheckBox fx:id="chkDolce" text="Dolce - 4€"/>
+
+    <Button text="Calcola Totale" onAction="#onCalcolaTotale"/>
+
+    <Label fx:id="lblTotale" text="Totale: 0€"/>
+
+</VBox>
