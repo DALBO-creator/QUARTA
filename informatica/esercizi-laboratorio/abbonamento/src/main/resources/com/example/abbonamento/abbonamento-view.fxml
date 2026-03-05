@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.abbonamento.abbonamentoController">
+
+    <Label text="Verifica Fine Abbonamento" />
+
+    <DatePicker fx:id="dateInizio" />
+
+    <RadioButton fx:id="radMensile" text="Mensile">
+      <toggleGroup>
+         <ToggleGroup fx:id="tg1" />
+      </toggleGroup></RadioButton>
+    <RadioButton fx:id="radSemestrale" text="Semestrale" toggleGroup="$tg1" />
+    <RadioButton fx:id="radAnnuale" text="Annuale" toggleGroup="$tg1" />
+
+    <Button onAction="#onCalcola" text="Calcola Fine Abbonamento" />
+
+    <Label fx:id="lblRisultato" text="Data fine abbonamento" />
+
+</VBox>

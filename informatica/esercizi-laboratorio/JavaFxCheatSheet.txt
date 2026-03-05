@@ -1,0 +1,204 @@
+LABEL
+
+La LABEL è un controllo grafico che serve a MOSTRARE TESTO nell’interfaccia.
+
+* NON riceve input dall’utente
+* Serve solo per visualizzare informazioni
+* Il testo viene solitamente impostato da codice
+
+METODO PRINCIPALE
+
+* setText() → imposta il testo mostrato nella label
+
+ESEMPIO
+
+```
+welcomeText.setText("Hello world!");
+```
+
+BUTTON
+
+Il BUTTON rappresenta un pulsante che l’utente può premere.
+
+* Quando viene premuto genera un EVENTO
+* Questo evento può essere collegato a un metodo nel controller
+
+ESEMPIO
+
+```
+@FXML
+protected void onHelloButtonClick() {
+    welcomeText.setText("Hello world!");
+}
+```
+
+* @FXML permette al file FXML di accedere al metodo
+
+TEXTFIELD
+
+Il TEXTFIELD è un campo di testo dove l’utente può scrivere.
+
+* Serve per inserire dati
+* Serve per leggere input dell’utente
+
+METODI PRINCIPALI
+
+* getText() → legge il testo inserito
+
+ESEMPIO
+
+```
+String nome = txtNome.getText();
+```
+
+* PromptText → testo grigio iniziale che suggerisce cosa inserire
+
+DATEPICKER
+
+Il DATEPICKER permette di scegliere una DATA tramite calendario.
+
+* Riduce errori rispetto a un TextField
+
+METODO PRINCIPALE
+
+* getValue() → restituisce la data selezionata
+
+TIPO RESTITUITO
+
+* LocalDate
+
+ESEMPIO
+
+```
+LocalDate data = calNascita.getValue();
+int anno = data.getYear();
+int mese = data.getMonthValue();
+int giorno = data.getDayOfMonth();
+```
+
+CHOICEBOX
+
+Il CHOICEBOX è un MENU A TENDINA.
+
+* Serve per scegliere UNA opzione tra più possibilità
+
+METODI PER AGGIUNGERE VALORI
+
+* add() → aggiunge un elemento
+* addAll() → aggiunge una lista di elementi
+
+ESEMPIO
+
+```
+choConversioni.getItems().add("Metri -> Yarde");
+```
+
+```
+ArrayList<String> ar = new ArrayList<>();
+ar.add("Miglia -> Kilometri");
+ar.add("Kilometri -> Miglia");
+choConversioni.getItems().addAll(ar);
+```
+
+* selectFirst() → seleziona il primo elemento
+* getSelectedItem() → legge il valore scelto
+* getSelectedIndex() → legge la posizione nella lista
+
+COMBOBOX
+
+Il COMBOBOX è simile al ChoiceBox ma gestisce meglio liste molto lunghe.
+
+* Può mostrare molte voci
+* Ha una barra di scorrimento
+
+METODO PRINCIPALE
+
+* getSelectionModel().getSelectedItem() → legge il valore scelto
+
+RADIOBUTTON
+
+I RADIOBUTTON permettono di scegliere UNA sola opzione tra più possibilità.
+
+* Tutte le opzioni sono visibili
+* Ne puoi selezionare solo una
+
+CHECKBOX
+
+I CHECKBOX permettono di selezionare PIÙ opzioni contemporaneamente.
+
+* Ogni opzione è indipendente
+* Puoi selezionare nessuna, una o tutte
+
+METODO PRINCIPALE
+
+* isSelected() → controlla se è selezionato
+
+ESEMPIO
+
+```
+if(checkJava.isSelected()){
+    System.out.println("Java selezionato");
+}
+```
+
+FINESTRE MODALI
+
+Le finestre MODALI bloccano l’applicazione finché l’utente non interagisce con esse.
+
+* Servono per mostrare messaggi
+* Servono per chiedere conferme
+* Servono per richiedere input
+
+ALERT PER MESSAGGI
+
+* Alert messaggio = new Alert(Alert.AlertType.ERROR)
+* setContentText("Devi selezionare una provincia!")
+* setHeaderText(null)
+* showAndWait()
+
+TIPI DI ALERT
+
+* NONE
+* INFORMATION
+* WARNING
+* CONFIRMATION
+* ERROR
+
+ALERT DI CONFERMA
+
+* Permette di chiedere all’utente se vuole continuare un’azione
+
+ESEMPIO
+
+```
+Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+Optional<ButtonType> result = alert.showAndWait();
+boolean conferma = result.isPresent() && result.get() == ButtonType.OK;
+```
+
+SCEGLI FILE
+
+Il FileChooser permette di aprire una finestra per selezionare un file.
+
+ESEMPIO
+
+```
+FileChooser fileChooser = new FileChooser();
+File file = fileChooser.showOpenDialog(stage);
+```
+
+* Restituisce un oggetto File con il percorso scelto
+
+IMAGEVIEW
+
+L’IMAGEVIEW serve a mostrare un’immagine nell’interfaccia.
+
+* setImage() → imposta l’immagine
+* L’immagine viene caricata da un oggetto Image
+
+ESEMPIO
+
+```
+Image img = new Image(file.toURI().toString());
+imageView.setImage(img);
+```

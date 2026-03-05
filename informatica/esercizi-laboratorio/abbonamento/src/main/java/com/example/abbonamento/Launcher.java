@@ -1,9 +1,9 @@
-package com.abbonamento.abbonamento;
+package com.example.abbonamento;
 
 import javafx.application.Application;
 
 public class Launcher {
     public static void main(String[] args) {
-        Application.launch(AbbonamentoApplication.class, args);
+        Application.launch(abbonamentoApplication.class, args);
     }
 }

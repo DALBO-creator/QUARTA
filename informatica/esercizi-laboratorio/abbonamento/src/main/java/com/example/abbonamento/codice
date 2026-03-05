@@ -1,0 +1,105 @@
+PROBLEMA 1
+
+abbonamento-view.fxml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.albo.abbonamento.abbonamentoController">
+
+    <Label text="Verifica Fine Abbonamento"/>
+
+    <DatePicker fx:id="dateInizio"/>
+
+    <RadioButton fx:id="radMensile" text="Mensile"/>
+    <RadioButton fx:id="radSemestrale" text="Semestrale"/>
+    <RadioButton fx:id="radAnnuale" text="Annuale"/>
+
+    <Button text="Calcola Fine Abbonamento" onAction="#onCalcola"/>
+
+    <Label fx:id="lblRisultato" text="Data fine abbonamento"/>
+
+</VBox>
+```
+
+abbonamentoController.java
+
+```java
+package com.albo.abbonamento;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+
+import java.time.LocalDate;
+
+public class abbonamentoController {
+
+    @FXML
+    private DatePicker dateInizio;
+
+    @FXML
+    private RadioButton radMensile;
+
+    @FXML
+    private RadioButton radSemestrale;
+
+    @FXML
+    private RadioButton radAnnuale;
+
+    @FXML
+    private Label lblRisultato;
+
+    private abbonamento model = new abbonamento();
+
+    @FXML
+    protected void onCalcola() {
+
+        LocalDate data = dateInizio.getValue();
+
+        int tipo = 0;
+
+        if(radMensile.isSelected()){
+            tipo = 1;
+        }
+
+        if(radSemestrale.isSelected()){
+            tipo = 6;
+        }
+
+        if(radAnnuale.isSelected()){
+            tipo = 12;
+        }
+
+        LocalDate fine = model.calcolaFine(data, tipo);
+
+        lblRisultato.setText("Fine abbonamento: " + fine);
+    }
+}
+```
+
+abbonamento.java
+
+```java
+package com.albo.abbonamento;
+
+import java.time.LocalDate;
+
+public class abbonamento {
+
+    public LocalDate calcolaFine(LocalDate inizio, int mesi){
+
+        if(inizio == null){
+            return null;
+        }
+
+        return inizio.plusMonths(mesi);
+    }
+}
+```

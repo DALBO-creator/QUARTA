@@ -1,8 +1,8 @@
-module com.abbonamento.abbonamento {
+module com.example.abbonamento {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.abbonamento.abbonamento to javafx.fxml;
-    exports com.abbonamento.abbonamento;
+    opens com.example.abbonamento to javafx.fxml;
+    exports com.example.abbonamento;
 }

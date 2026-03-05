@@ -33,7 +33,6 @@ public class CodiceFiscaleController {
         String nome = txtNome.getText();
         String cognome = txtCognome.getText();
         LocalDate data = dtpData.getValue();
-        boolean sesso = rdbM.isSelected();
 
 
 
