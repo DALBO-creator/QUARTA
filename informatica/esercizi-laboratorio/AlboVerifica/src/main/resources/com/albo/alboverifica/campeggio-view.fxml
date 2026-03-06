@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="518.0" prefWidth="367.0" spacing="8" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.albo.alboverifica.campeggioController">
+
+    <Label text="Prenotazione Campeggio" />
+
+    <TextField fx:id="txtNome" promptText="Nome campeggiatore" />
+
+    <DatePicker fx:id="dateInizio" />
+    <DatePicker fx:id="dateFine" />
+
+    <TextField fx:id="txtPiazzola" promptText="Numero piazzola (1-30)" />
+
+    <ChoiceBox fx:id="choTipoPiazzola" />
+
+    <CheckBox fx:id="chkAnimali" text="Animali al seguito" />
+
+    <TextField fx:id="txtAdulti" promptText="Numero adulti" />
+    <TextField fx:id="txtBambini" promptText="Numero bambini" />
+
+    <Button onAction="#onCalcola" text="Calcola" />
+    <Button onAction="#onInvia" text="Invia" />
+    <Button onAction="#onVisualizza" text="Visualizza" />
+
+    <Label fx:id="lblRisultato" text="Prezzo" />
+
+</VBox>
