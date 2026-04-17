@@ -6,7 +6,7 @@ import socket
 # ===== CONFIGURAZIONE =====
 ADDRESS_FAMILY = socket.AF_INET     # IPv4
 SOCKET_TYPE    = socket.SOCK_STREAM # TCP
-SERVER_HOST    = 'localhost'        # Indirizzo di ascolto
+SERVER_HOST    = '10.4.54.20'        # Indirizzo di ascolto
 SERVER_PORT    = 5000               # Porta di ascolto
 
 # ===== DATABASE DOMANDE (argomento: Geografia) =====
@@ -62,7 +62,7 @@ try:
 
         # ── Benvenuto ─────────────────────────────────────────────────────────
         invia(client_socket, "Benvenuto al Quiz di Geografia!")
-        invia(client_socket, f"Risponderai a {len(domande)} domande. Buona fortuna!\n")
+        invia(client_socket, f"Risponderai a {len(domande)} domande. Buona fortuna!")
 
         punteggio = 0
 
@@ -88,7 +88,7 @@ try:
             print(f"[7] Feedback inviato: '{feedback}'")
 
         # ── Risultato finale ──────────────────────────────────────────────────
-        percentuale = round(punteggio / len(domande) * 100)
+        percentuale = round(punteggio / len(domande) * 100 )
         invia(client_socket, "\n--- QUIZ TERMINATO ---")
         invia(client_socket, f"Punteggio finale: {punteggio}/{len(domande)} ({percentuale}%)")
 
